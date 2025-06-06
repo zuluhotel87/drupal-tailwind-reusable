@@ -1,0 +1,23 @@
+uuid: cf02d7dd-db31-4ddd-a67c-d0760a60a196
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_primary_link
+    - paragraphs.paragraphs_type.content_item_pricing_plan
+  module:
+    - link
+id: paragraph.content_item_pricing_plan.field_primary_link
+field_name: field_primary_link
+entity_type: paragraph
+bundle: content_item_pricing_plan
+label: 'Primary Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

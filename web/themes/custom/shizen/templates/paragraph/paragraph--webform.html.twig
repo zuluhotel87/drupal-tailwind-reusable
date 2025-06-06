@@ -1,0 +1,12 @@
+{% from "@shizen/macros/ui/molecules/header/ui.header.html.twig" import simpleHeader %}
+
+{{ simpleHeader({
+  layout: 'centered',
+  titleTag: paragraph.field_title_tag.value,
+  titleLabel: paragraph.field_title.value,
+  descriptionLabel: paragraph.field_description.value,
+}) }}
+
+<div class="mx-auto max-w-screen-md">
+  {{ content.field_webform }}
+</div>

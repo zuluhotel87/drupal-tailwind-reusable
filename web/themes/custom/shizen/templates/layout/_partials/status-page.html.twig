@@ -1,0 +1,22 @@
+{% from "@shizen/macros/ui/atoms/button/ui.button.html.twig" import button %}
+{% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+{% from "@shizen/macros/ui/atoms/title/ui.title.html.twig" import title %}
+
+<div class="text-center grid space-y-2 my-11">
+  {{ icon(iconName ?? 'exclamation-triangle', {class: 'mx-auto', size: 40}) }}
+  {{ title({
+    tag: 'h4',
+    label: title,
+  }) }}
+  <p class="text-lg">{{ message }}</p>
+  {% if showHomepageBtn %}
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4">
+      {{ button({
+        label: 'Homepage'|trans,
+        buttonStyle: 'primary',
+        buttonSize: 'large',
+        href: path('<front>'),
+      }) }}
+    </div>
+  {% endif %}
+</div>

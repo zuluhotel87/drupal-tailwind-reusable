@@ -1,0 +1,7 @@
+{% macro link(opts) %}
+  <a href="{{ opts.href | raw }}"
+     class="hover:text-primary-hover transition-colors duration-200 hover:no-underline {{ opts.class ?? '' }}"
+    {{ opts.ariaLabel ? 'aria-label="' ~ opts.ariaLabel ~ '"' }}>
+    {{ opts.label }}
+  </a>
+{% endmacro link %}

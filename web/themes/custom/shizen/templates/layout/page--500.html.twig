@@ -1,0 +1,11 @@
+{{ include('@shizen/layout/_partials/header.html.twig') }}
+
+<section class="container">
+  {{ include('@shizen/layout/_partials/status-page.html.twig', {
+    title: 'Internal Server Error.'|t,
+    message: 'We are already working to solve the problem.'|t,
+    showHomepageBtn: true,
+  }) }}
+</section>
+
+{{ include('@shizen/layout/_partials/footer.html.twig') }}

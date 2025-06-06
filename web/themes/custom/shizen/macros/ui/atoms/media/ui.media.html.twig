@@ -1,0 +1,34 @@
+{% macro media(item, opts) %}
+  {% set mediaType = item.field_media.entity.bundle() %}
+
+  {% if mediaType == 'image' %}
+    {{ _self.image(item, opts) }}
+  {% elseif mediaType == 'remote_video' %}
+    {{ _self.remoteVideo(item, opts) }}
+  {% elseif mediaType == 'video' %}
+    {{ _self.video(item, opts) }}
+  {% endif %}
+{% endmacro media %}
+
+{% macro image(item, opts) %}
+  {% set media_file_uri = item.field_media|file_uri %}
+  {% set image_style = item.field_image_style.entity.name %}
+
+  <div class="relative">
+    {{ drupal_image(
+      media_file_uri,
+      image_style,
+      {
+        class: opts.class ?? 'rounded-md shadow-lg',
+      },
+    ) }}
+  </div>
+{% endmacro image %}
+
+{% macro remoteVideo(item, opts) %}
+
+{% endmacro remoteVideo %}
+
+{% macro video(item, opts) %}
+
+{% endmacro video %}

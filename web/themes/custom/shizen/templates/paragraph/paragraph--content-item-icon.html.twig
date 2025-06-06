@@ -1,0 +1,31 @@
+{% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+{% from "@shizen/macros/ui/molecules/header/ui.header.html.twig" import simpleHeader %}
+
+{% set parent = paragraph.getParentEntity() %}
+{% set parent_layout = parent.field_layout_content_list.value %}
+{% set is_parent_centered = parent_layout == 'centered' %}
+{% set icon_inline = parent.type.target_id == 'content_list_media' %}
+
+{% set icon_parts = paragraph.field_icon.entity.field_icon.target_id|split(':') %}
+{% set layout = paragraph.field_icon_layout.value %}
+{% set layouts = {
+  default: 'rounded-md',
+  rounded: 'rounded-full',
+} %}
+
+{% set layout_classes = (is_parent_centered ? 'mx-auto ') ~ layouts[layout]|default('') %}
+
+<div class="{{ icon_inline ? 'flex items-start gap-4 sm:gap-6' : 'p-4 sm:p-6' }}">
+  <div class="flex justify-center items-center mb-4 text-primary w-10 h-10 lg:h-16 lg:w-16 bg-primary-light {{ layout_classes }}">
+    {{ icon(icon_parts[1]) }}
+  </div>
+
+  {{ simpleHeader({
+    wrapperClass: icon_inline ? 'flex-1',
+    layout: parent_layout,
+    titleTag: paragraph.field_title_tag.value,
+    titleLabel: paragraph.field_title.value,
+    descriptionLabel: paragraph.field_description.value,
+    cta: paragraph.field_cta.entity,
+  }) }}
+</div>

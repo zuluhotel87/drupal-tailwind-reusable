@@ -1,0 +1,23 @@
+uuid: 64eb880b-c936-422b-babb-702e2fb750a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_container_width
+    - paragraphs.paragraphs_type.content_list
+  module:
+    - options
+id: paragraph.content_list.field_container_width
+field_name: field_container_width
+entity_type: paragraph
+bundle: content_list
+label: 'Container Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

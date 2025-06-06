@@ -1,0 +1,36 @@
+{% from "@shizen/macros/ui/atoms/badge/ui.badge.html.twig" import badge %}
+{% from "@shizen/macros/ui/atoms/price/ui.price.html.twig" import price %}
+{% from "@shizen/macros/ui/molecules/cta/ui.cta.html.twig" import callToAction %}
+{% from "@shizen/macros/ui/molecules/header/ui.header.html.twig" import simpleHeader %}
+
+{% set is_featured = paragraph.field_featured.value %}
+
+<div class="flex flex-col gap-6 p-6 mx-auto text-center {{ is_featured ? 'border border-primary' }}">
+  {% if is_featured %}
+    {{ badge({
+      label: 'Most popular'|t,
+      class: 'self-center',
+    }) }}
+  {% endif %}
+
+  {{ simpleHeader({
+    wrapperClass: '',
+    layout: 'centered',
+    titleTag: paragraph.field_title_tag.value,
+    titleLabel: paragraph.field_title.value,
+    descriptionLabel: paragraph.field_description.value,
+  }) }}
+
+  <div class="flex justify-center items-baseline">
+    <span class="mr-2 text-5xl font-extrabold">{{ price(paragraph.field_price.value) }}</span>
+    <span class="text-secondary">{{ '/' ~ paragraph.field_pricing_interval.value }}</span>
+  </div>
+
+  {{ content.field_list_features }}
+
+  {{ callToAction({
+    primaryLink: paragraph,
+    forcePrimaryLinkButton: true,
+    class: 'text-center my-4',
+  }) }}
+</div>

@@ -1,0 +1,175 @@
+# Recommended sprite version, only one file.
+bootstrap:
+  enabled: true
+  label: "Bootstrap"
+  description: "Bootstrap icons from SVG Sprite single source."
+  links:
+    - https://icons.getbootstrap.com/#usage
+  version: 1.11.3
+  license:
+    name: MIT
+    url: https://github.com/twbs/icons/blob/main/LICENSE
+    gpl-compatible: true
+  extractor: svg_sprite
+  config:
+    sources:
+      - node_modules/bootstrap-icons/bootstrap-icons.svg
+      # Or path in libraries relative to Drupal root web folder.
+      # - /libraries/bootstrap-icons/node_modules/bootstrap-icons/bootstrap-icons.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+    color:
+      title: "Color"
+      type: "string"
+      format: "color"
+    alt:
+      title: "Alt text"
+      type: "string"
+      description: "Accessibility alternative text, leave empty for decorative icon."
+  template: >-
+    <svg
+      class="bi bi-{{ icon_id|clean_class }}"
+      width="{{ size|default(32) }}"
+      height="{{ size|default(32) }}"
+      fill="{{ color|default('currentColor') }}"
+      {% if alt is empty %}
+        aria-hidden="true"
+      {% else %}
+        aria-label="{{ alt }}"
+      {% endif %}
+    >
+      <use href="{{ source }}#{{ icon_id }}"/>
+    </svg>
+
+# Alternative SVG files.
+bootstrap_svg:
+  enabled: false
+  label: "Bootstrap SVG"
+  description: "Bootstrap icons from SVG files."
+  links:
+    - https://icons.getbootstrap.com/#usage
+  version: 1.11.3
+  license:
+    name: MIT
+    url: https://github.com/twbs/icons/blob/main/LICENSE
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - node_modules/bootstrap-icons/icons/*.svg
+      # Or path in libraries relative to Drupal root web folder.
+      # - /libraries/bootstrap-icons/node_modules/bootstrap-icons/icons/*.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+    color:
+      title: "Color"
+      type: "string"
+      format: "color"
+  template: >-
+    <svg{{
+        attributes
+          .setAttribute('viewBox', attributes.viewBox|default('0 0 16 16'))
+          .setAttribute('width', size|default('32'))
+          .setAttribute('height', size|default('32'))
+          .setAttribute('aria-hidden', 'true')
+    }}>
+      {{ content }}
+    </svg>
+
+# Alternative SVG files in img.
+bootstrap_path:
+  enabled: false
+  label: "Bootstrap SVG in img"
+  description: "Bootstrap icons from SVG files in img."
+  links:
+    - https://icons.getbootstrap.com/#usage
+  version: 1.11.3
+  license:
+    name: MIT
+    url: https://github.com/twbs/icons/blob/main/LICENSE
+    gpl-compatible: true
+  extractor: path
+  config:
+    sources:
+      - node_modules/bootstrap-icons/icons/*.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+    color:
+      title: "Color"
+      type: "string"
+      format: "color"
+    alt:
+      title: "Alt text"
+      type: "string"
+      description: "Accessibility alternative text, leave empty for decorative icon."
+  template: >-
+    <img
+      class="bi bi-{{ icon_id|clean_class }}"
+      src="{{ source }}"
+      width="{{ size|default(32) }}"
+      height="{{ size|default(32) }}"
+      alt="{{ alt }}"
+      {% if alt is empty %}
+        role="presentation"
+        aria-hidden="true"
+      {% elseif title %}
+        title="{{ title }}"
+      {% endif %}
+    >
+
+# Require sub module ui_icons_font.
+# Alternative font version, need preview template to work properly and json list
+# of icons for discovery.
+bootstrap_name:
+  enabled: false
+  label: "Bootstrap Name"
+  description: "Bootstrap icons from CSS name."
+  links:
+    - https://icons.getbootstrap.com/#usage
+  version: 1.11.3
+  license:
+    name: MIT
+    url: https://github.com/twbs/icons/blob/main/LICENSE
+    gpl-compatible: true
+  extractor: font
+  config:
+    sources:
+      - node_modules/bootstrap-icons/font/bootstrap-icons.json
+      # - node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+    color:
+      title: "Color"
+      type: "string"
+      format: "color"
+  # Do not clean class as id must be exact for class based.
+  template: >-
+    <i class="bi bi-{{ icon_id }}"
+      style="
+        font-size:{{ size|default(32) }}px;
+        {% if color %}color:{{ color }};{% endif %}
+      "
+    ></i>
+  # Load css file to allow class based icon.
+  library: 'ui_icons_bootstrap/bootstrap_icons'
+  # Do not clean class as id must be exact for class based.
+  preview: >
+    <i class="bi bi-{{ icon_id|clean_class }}"
+      title="{{ label }}"
+      style="
+        font-size: {{ size|default(48) }}px;
+        line-height: {{ size|default(48) }}px;
+      "
+    ></i>

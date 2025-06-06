@@ -1,0 +1,15 @@
+*
+!/dist
+!/macros
+!/macros/**
+!/preprocess
+!/preprocess/**
+!/src
+!/src/**
+!/templates
+!/templates/**
+!.gitignore
+!logo.svg
+!shizen.info.yml
+!shizen.libraries.yml
+!shizen.theme

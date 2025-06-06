@@ -1,0 +1,7 @@
+.nav-container {
+  @apply flex flex-col lg:flex-row lg:items-center lg:gap-8;
+}
+
+.nav-container .nav-menu + .nav-menu {
+  @apply mt-0;
+}

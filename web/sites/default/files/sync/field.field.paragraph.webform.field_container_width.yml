@@ -1,0 +1,23 @@
+uuid: e39c5b62-7dc5-4309-b0fe-10c790846534
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_container_width
+    - paragraphs.paragraphs_type.webform
+  module:
+    - options
+id: paragraph.webform.field_container_width
+field_name: field_container_width
+entity_type: paragraph
+bundle: webform
+label: 'Container Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

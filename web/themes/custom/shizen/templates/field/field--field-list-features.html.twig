@@ -1,0 +1,10 @@
+{% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+
+<ul role="list" class="space-y-2 text-left">
+  {% for item in items %}
+    <li class="flex items-center space-x-2">
+      {{ icon('check', {class: 'text-status-success'}) }}
+      <span>{{ item.content }}</span>
+    </li>
+  {% endfor %}
+</ul>

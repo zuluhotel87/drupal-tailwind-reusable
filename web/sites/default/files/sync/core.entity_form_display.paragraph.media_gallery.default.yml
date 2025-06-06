@@ -1,0 +1,130 @@
+uuid: 27d14fdf-34ec-45d7-8fbd-daaf0a4b68da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_gallery.field_container_bg_color
+    - field.field.paragraph.media_gallery.field_container_width
+    - field.field.paragraph.media_gallery.field_field_container_height
+    - field.field.paragraph.media_gallery.field_image_style
+    - field.field.paragraph.media_gallery.field_media
+    - field.field.paragraph.media_gallery.field_position_x
+    - paragraphs.paragraphs_type.media_gallery
+  module:
+    - field_group
+    - media_library
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_overview
+        - group_styling
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_overview:
+      children:
+        - field_position_x
+        - field_image_style
+        - field_media
+      label: Overview
+      region: content
+      parent_name: group_tabs
+      weight: 7
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: false
+    group_styling:
+      children:
+        - field_container_width
+        - field_field_container_height
+        - field_container_bg_color
+      label: Styling
+      region: content
+      parent_name: group_tabs
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: false
+id: paragraph.media_gallery.default
+targetEntityType: paragraph
+bundle: media_gallery
+mode: default
+content:
+  field_container_bg_color:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_container_width:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_field_container_height:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_style:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        07b3494e-aed6-4340-a1bb-c1bcfd250649:
+          entity_type: paragraph
+          bundle: media_gallery
+          dependee: field_media
+          settings:
+            state: '!empty'
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_media:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_position_x:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

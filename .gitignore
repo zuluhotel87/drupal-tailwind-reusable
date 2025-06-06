@@ -1,0 +1,17 @@
+*
+!/.ddev
+!/.ddev/**
+!/recipes
+!/recipes/**
+!/web
+!/web/**
+!.editorconfig
+!.gitattributes
+!.gitignore
+!composer.json
+!composer.lock
+!package.json
+!package-lock.json
+!tailwind.config.js
+!TODO.md
+!vite.config.js

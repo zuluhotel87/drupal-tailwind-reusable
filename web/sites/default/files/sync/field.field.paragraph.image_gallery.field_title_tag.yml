@@ -1,0 +1,23 @@
+uuid: b70b6308-0595-4d6a-ae44-79c01e485773
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_tag
+    - paragraphs.paragraphs_type.image_gallery
+  module:
+    - options
+id: paragraph.image_gallery.field_title_tag
+field_name: field_title_tag
+entity_type: paragraph
+bundle: image_gallery
+label: 'Title tag'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,40 @@
+{% from "@shizen/macros/ui/atoms/media/ui.media.html.twig" import media %}
+{% from "@shizen/macros/ui/molecules/header/ui.header.html.twig" import simpleHeader %}
+
+{% set layout = paragraph.field_header_layout.value %}
+{% set is_centered = layout == 'centered' %}
+
+{% set media_layouts = {
+  left: 'grid lg:grid-cols-2 gap-8',
+  right: 'grid lg:grid-cols-2 gap-8 [&>div:first-child]:lg:order-last',
+} %}
+
+{% set media = paragraph.field_media_gallery.entity %}
+{% set media_file_uri = media ? media.field_media|file_uri %}
+{% set media_position = media ? media.field_position_x.value %}
+
+<div class="{{ media_layouts[media_position]|default('') }}">
+  {% if media_file_uri %}
+    <div {{ is_centered ? 'class="place-items-center"' }}>
+      {{ media(media) }}
+    </div>
+  {% endif %}
+
+  <div>
+    {{ simpleHeader({
+      wrapperClass: 'mb-8 lg:mb-10' ~ layouts[layout].content|default(''),
+      layout: layout,
+      titleTag: paragraph.field_title_tag.value,
+      titleLabel: paragraph.field_title.value,
+      descriptionLabel: paragraph.field_description.value,
+    }) }}
+
+    <div class="space-y-8 md:space-y-0 md:grid md:gap-12 grid-cols-1">
+      {% for item in paragraph.field_content_items %}
+        <div {{ paragraph.field_is_card.value ? 'class="bg-white border border-stroke rounded-md shadow"' }}>
+          {{ drupal_entity('paragraph', item.entity.id.value) }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

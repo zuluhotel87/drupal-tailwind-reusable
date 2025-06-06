@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+// Name all preprocessors being used.
+$preprocess = [
+  'block',
+  'field',
+  'form',
+  'html',
+  'links',
+  'node',
+  'page',
+  'paragraph',
+  'region',
+  'taxonomy',
+  'view',
+];
+
+// Include all files in the preprocesses folder.
+foreach ($preprocess as $preprocessor) {
+    $filepath = __DIR__ . '/preprocess/' . $preprocessor . '.php';
+
+    if (file_exists($filepath)) {
+        require_once $filepath;
+    }
+}

@@ -1,0 +1,23 @@
+uuid: 3e172845-db62-47a8-84f9-99c358f66d5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_field_container_height
+    - paragraphs.paragraphs_type.team_members
+  module:
+    - options
+id: paragraph.team_members.field_field_container_height
+field_name: field_field_container_height
+entity_type: paragraph
+bundle: team_members
+label: 'Container Height'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

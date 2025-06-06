@@ -1,0 +1,11 @@
+.nav-menu {
+  @apply flex flex-col font-medium mt-4 rounded-lg
+    /* Light Mode */
+  bg-base
+    /* Dark Mode */
+  dark:bg-base-dark
+    /* Desktop Light */
+  lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent
+    /* Desktop Dark */
+  lg:dark:bg-transparent dark:border-stroke-dark;
+}

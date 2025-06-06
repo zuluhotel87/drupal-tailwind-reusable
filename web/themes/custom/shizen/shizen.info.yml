@@ -1,0 +1,10 @@
+name: Shizen
+type: theme
+description: A base theme using Drupal core markup and CSS.
+core_version_requirement: ^11
+package: Core
+version: VERSION
+base theme: false
+
+libraries:
+  - shizen/base

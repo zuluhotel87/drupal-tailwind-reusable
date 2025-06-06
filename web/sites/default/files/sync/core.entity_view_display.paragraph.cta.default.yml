@@ -1,0 +1,49 @@
+uuid: b2c681de-7b20-46cc-85c8-c9e4c01fa92a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta.field_button_size
+    - field.field.paragraph.cta.field_primary_link
+    - field.field.paragraph.cta.field_secondary_link
+    - paragraphs.paragraphs_type.cta
+  module:
+    - link
+    - options
+id: paragraph.cta.default
+targetEntityType: paragraph
+bundle: cta
+mode: default
+content:
+  field_button_size:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_primary_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_secondary_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

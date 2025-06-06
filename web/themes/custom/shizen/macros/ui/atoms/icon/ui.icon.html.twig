@@ -1,0 +1,12 @@
+{% macro icon(name, opts) %}
+  <span class="flex-shrink-0 {{ opts.class ?? '' }}">
+    {{ icon('bootstrap', name, opts) }}
+  </span>
+{% endmacro icon %}
+
+{% macro iconLabel(icon, opts) %}
+  <div class="flex items-center gap-1">
+    {{ _self.icon(icon, opts) }}
+    <span {{ opts.labelClass ? 'class="' ~ opts.labelClass ~ '"' }}>{{ opts.label }}</span>
+  </div>
+{% endmacro iconLabel %}

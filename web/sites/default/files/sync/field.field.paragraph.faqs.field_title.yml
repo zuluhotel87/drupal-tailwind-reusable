@@ -1,0 +1,21 @@
+uuid: 08e8a346-43e3-486c-a459-bc1b70ea4943
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.faqs
+id: paragraph.faqs.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: faqs
+label: Title
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Frequently asked questions'
+default_value_callback: ''
+settings: {  }
+field_type: string

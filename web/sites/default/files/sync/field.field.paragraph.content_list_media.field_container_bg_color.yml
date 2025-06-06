@@ -1,0 +1,23 @@
+uuid: 42a6407d-da75-4286-b388-cad8a9671703
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_container_bg_color
+    - paragraphs.paragraphs_type.content_list_media
+  module:
+    - options
+id: paragraph.content_list_media.field_container_bg_color
+field_name: field_container_bg_color
+entity_type: paragraph
+bundle: content_list_media
+label: 'Background Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

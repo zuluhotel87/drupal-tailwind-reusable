@@ -1,0 +1,12 @@
+{{ include('@shizen/layout/_partials/header.html.twig') }}
+
+<section class="container">
+  {{ include('@shizen/layout/_partials/status-page.html.twig', {
+    iconName: 'lock',
+    title: "Access Restricted"|t,
+    message: "You don't have permission to access this page. Head back to explore other areas of our site."|t,
+    showHomepageBtn: true,
+  }) }}
+</section>
+
+{{ include('@shizen/layout/_partials/footer.html.twig') }}

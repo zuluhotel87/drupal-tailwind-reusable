@@ -1,0 +1,11 @@
+{{ include('@shizen/layout/_partials/header.html.twig') }}
+
+<section class="container">
+  {{ include('@shizen/layout/_partials/status-page.html.twig', {
+    title: "Something's missing."|t,
+    message: "Sorry, we can't find that page. You'll find lots to explore on the home page."|t,
+    showHomepageBtn: true,
+  }) }}
+</section>
+
+{{ include('@shizen/layout/_partials/footer.html.twig') }}

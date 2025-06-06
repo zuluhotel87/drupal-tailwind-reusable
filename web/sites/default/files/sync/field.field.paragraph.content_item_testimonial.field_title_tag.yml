@@ -1,0 +1,23 @@
+uuid: 5e3ef094-df6c-4f36-904d-35396d9d5afa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_tag
+    - paragraphs.paragraphs_type.content_item_testimonial
+  module:
+    - options
+id: paragraph.content_item_testimonial.field_title_tag
+field_name: field_title_tag
+entity_type: paragraph
+bundle: content_item_testimonial
+label: 'Title tag'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

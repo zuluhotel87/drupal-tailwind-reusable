@@ -1,0 +1,129 @@
+uuid: 7e74d607-b8e3-49ea-8aed-62f0114e832e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_articles.field_container_bg_color
+    - field.field.paragraph.related_articles.field_container_width
+    - field.field.paragraph.related_articles.field_description
+    - field.field.paragraph.related_articles.field_field_container_height
+    - field.field.paragraph.related_articles.field_related_article_tags
+    - field.field.paragraph.related_articles.field_title
+    - field.field.paragraph.related_articles.field_title_tag
+    - paragraphs.paragraphs_type.related_articles
+  module:
+    - field_group
+    - tagify
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_overview
+        - group_styling
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_overview:
+      children:
+        - field_title_tag
+        - field_title
+        - field_description
+        - field_related_article_tags
+      label: Overview
+      region: content
+      parent_name: group_tabs
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: false
+    group_styling:
+      children:
+        - field_is_card
+        - field_container_width
+        - field_field_container_height
+        - field_container_bg_color
+      label: Styling
+      region: content
+      parent_name: group_tabs
+      weight: 2
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: false
+id: paragraph.related_articles.default
+targetEntityType: paragraph
+bundle: related_articles
+mode: default
+content:
+  field_container_bg_color:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_container_width:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: string_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_field_container_height:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_related_article_tags:
+    type: tagify_select_widget
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_tag:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

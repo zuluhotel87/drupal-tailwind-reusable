@@ -1,0 +1,23 @@
+uuid: 54c6773a-63fe-47e6-8629-8b0a1215166a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_field_container_height
+    - paragraphs.paragraphs_type.image_gallery
+  module:
+    - options
+id: paragraph.image_gallery.field_field_container_height
+field_name: field_field_container_height
+entity_type: paragraph
+bundle: image_gallery
+label: 'Container Height'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

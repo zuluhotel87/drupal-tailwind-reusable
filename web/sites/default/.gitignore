@@ -1,0 +1,6 @@
+*
+!files
+!files/**
+!.gitignore
+!default.services.yml
+!default.settings.php

@@ -1,0 +1,79 @@
+uuid: 1ba22325-8fa3-4234-84d5-7e81c08ad19e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_item_media.field_cta
+    - field.field.paragraph.content_item_media.field_description
+    - field.field.paragraph.content_item_media.field_media_gallery
+    - field.field.paragraph.content_item_media.field_title
+    - field.field.paragraph.content_item_media.field_title_tag
+    - paragraphs.paragraphs_type.content_item_media
+  module:
+    - paragraphs
+id: paragraph.content_item_media.default
+targetEntityType: paragraph
+bundle: content_item_media
+mode: default
+content:
+  field_cta:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_description:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_gallery:
+    type: paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_tag:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

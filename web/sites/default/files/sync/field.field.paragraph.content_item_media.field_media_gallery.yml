@@ -1,0 +1,103 @@
+uuid: 12f895ff-02d7-4621-9dc8-c486987f9663
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_gallery
+    - paragraphs.paragraphs_type.content_item_media
+    - paragraphs.paragraphs_type.media_gallery
+  module:
+    - entity_reference_revisions
+id: paragraph.content_item_media.field_media_gallery
+field_name: field_media_gallery
+entity_type: paragraph
+bundle: content_item_media
+label: 'Media Gallery'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      media_gallery: media_gallery
+    negate: 0
+    target_bundles_drag_drop:
+      carousel:
+        weight: 29
+        enabled: false
+      content_heading:
+        weight: 30
+        enabled: false
+      content_heading_2_columns:
+        weight: 31
+        enabled: false
+      content_item_icon:
+        weight: 33
+        enabled: false
+      content_item_media:
+        weight: 33
+        enabled: false
+      content_item_pricing_plan:
+        weight: 35
+        enabled: false
+      content_item_statistic:
+        weight: 36
+        enabled: false
+      content_item_svg:
+        weight: 37
+        enabled: false
+      content_item_testimonial:
+        weight: 38
+        enabled: false
+      content_list_card_icon:
+        weight: 39
+        enabled: false
+      content_list_feature:
+        weight: 41
+        enabled: false
+      content_list_features:
+        weight: 42
+        enabled: false
+      content_list_icon:
+        weight: 43
+        enabled: false
+      content_list_media:
+        weight: 44
+        enabled: false
+      content_list_media_card:
+        weight: 40
+        enabled: false
+      content_list_pricing_plan:
+        weight: 45
+        enabled: false
+      content_list_statistics:
+        weight: 46
+        enabled: false
+      content_list_svg:
+        weight: 47
+        enabled: false
+      content_list_testimonial:
+        weight: 48
+        enabled: false
+      faqs:
+        weight: 49
+        enabled: false
+      image_gallery:
+        weight: 52
+        enabled: false
+      media_gallery:
+        weight: 53
+        enabled: true
+      related_articles:
+        weight: 54
+        enabled: false
+      team_members:
+        weight: 55
+        enabled: false
+      webform:
+        weight: 56
+        enabled: false
+field_type: entity_reference_revisions

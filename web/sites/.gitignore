@@ -1,0 +1,5 @@
+*
+!/default
+!/default/**
+!.gitignore
+!development.services.yml

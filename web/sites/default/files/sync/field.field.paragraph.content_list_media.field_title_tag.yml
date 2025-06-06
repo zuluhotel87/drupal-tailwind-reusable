@@ -1,0 +1,23 @@
+uuid: a8aa7512-f3b5-4ce9-88d0-4178bb8fa91d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_tag
+    - paragraphs.paragraphs_type.content_list_media
+  module:
+    - options
+id: paragraph.content_list_media.field_title_tag
+field_name: field_title_tag
+entity_type: paragraph
+bundle: content_list_media
+label: 'Title tag'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

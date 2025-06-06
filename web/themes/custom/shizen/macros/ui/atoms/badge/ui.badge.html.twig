@@ -1,0 +1,5 @@
+{% macro badge(opts) %}
+  <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded {{ opts.class ?? '' }}">
+    {{ opts.label }}
+  </span>
+{% endmacro badge %}

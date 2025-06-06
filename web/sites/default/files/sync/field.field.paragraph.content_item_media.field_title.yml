@@ -1,0 +1,19 @@
+uuid: da2bdf2a-8201-4196-bac5-8700a533bcef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.content_item_media
+id: paragraph.content_item_media.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: content_item_media
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

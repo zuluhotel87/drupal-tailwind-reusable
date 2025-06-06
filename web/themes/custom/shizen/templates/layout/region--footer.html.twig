@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+{% from "@shizen/macros/ui/atoms/link/ui.link.html.twig" import link %}
+
+<footer class="container-light">
+  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-secondary sm:text-center dark:text-base-dark-content">
+            {% set home_link_opts = {
+              label: site_name,
+              href: path('<front>'),
+              attributes: 'rel="home"'
+            } %}
+
+            © {{ "now"|date("Y") }} {{ link(home_link_opts) }} - {{ 'All Rights Reserved'|t }}.
+          </span>
+      <div class="flex gap-4 mt-4 sm:justify-center sm:mt-0">
+        {% set facebook_label  %}
+          {{ icon('facebook') }}
+        {% endset %}
+
+        {% set linkedin_label  %}
+          {{ icon('linkedin') }}
+        {% endset %}
+
+        {% set twitter_label  %}
+          {{ icon('twitter-x') }}
+        {% endset %}
+
+        {{ link({
+          label: facebook_label,
+          href: '#',
+        }) }}
+        {{ link({
+          label: linkedin_label,
+          href: '#',
+        }) }}
+        {{ link({
+          label: twitter_label,
+          href: '#',
+        }) }}
+      </div>
+    </div>
+  </div>
+</footer>
+

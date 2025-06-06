@@ -1,0 +1,29 @@
+uuid: 3459e378-def0-4e10-bf74-7b80c26f133c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_faqs
+    - paragraphs.paragraphs_type.faqs
+    - taxonomy.vocabulary.faqs
+id: paragraph.faqs.field_faqs
+field_name: field_faqs
+entity_type: paragraph
+bundle: faqs
+label: FAQs
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      faqs: faqs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

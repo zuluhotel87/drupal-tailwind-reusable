@@ -1,0 +1,29 @@
+uuid: 3d192bf8-13ca-4869-8c7b-859ecd8ce22f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_profile_image
+    - media.type.image
+    - taxonomy.vocabulary.team_members
+id: taxonomy_term.team_members.field_profile_image
+field_name: field_profile_image
+entity_type: taxonomy_term
+bundle: team_members
+label: 'Profile Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,12 @@
+{% macro image(image_property, opts) %}
+  {% set default = opts.default ?? 'w-full h-full object-cover ' %}
+  {% set custom_class = opts.class is defined ? opts.class : 'rounded-md shadow-lg' %}
+
+  <div class="relative {{ opts.wrapper ?? 'h-full w-full' }}">
+    {{ drupal_image(
+      image_property,
+      opts.style ?? 'medium',
+      {class: default ~ custom_class},
+    ) }}
+  </div>
+{% endmacro image %}

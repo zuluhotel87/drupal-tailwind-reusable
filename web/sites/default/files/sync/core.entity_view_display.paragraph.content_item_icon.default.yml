@@ -1,0 +1,68 @@
+uuid: 7e49cbad-2ba9-4601-912f-7a72cbfa0073
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_item_icon.field_cta
+    - field.field.paragraph.content_item_icon.field_description
+    - field.field.paragraph.content_item_icon.field_icon
+    - field.field.paragraph.content_item_icon.field_icon_layout
+    - field.field.paragraph.content_item_icon.field_title
+    - field.field.paragraph.content_item_icon.field_title_tag
+    - paragraphs.paragraphs_type.content_item_icon
+  module:
+    - entity_reference_revisions
+    - options
+    - ui_icons_field
+id: paragraph.content_item_icon.default
+targetEntityType: paragraph
+bundle: content_item_icon
+mode: default
+content:
+  field_cta:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_icon:
+    type: icon_formatter
+    label: hidden
+    settings:
+      icon_settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_icon_layout:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title_tag:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden: {  }

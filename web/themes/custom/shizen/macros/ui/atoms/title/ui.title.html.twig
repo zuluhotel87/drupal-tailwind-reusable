@@ -1,0 +1,18 @@
+{% macro title(opts) %}
+  {% set styles = {
+    h1: 'text-5xl font-extrabold',
+    h2: 'text-4xl font-bold',
+    h3: 'text-3xl font-bold',
+    h4: 'text-2xl font-bold',
+    h5: 'text-xl font-bold',
+    h6: 'text-lg font-bold',
+  } %}
+
+  {% set tag = opts.tag ?? 'h1' %}
+  {% set style = opts.style ?? tag %}
+  {% set class = 'not-italic' ~ ' ' ~ styles[style] ~ ' ' ~ (opts.class ?? '') %}
+
+  <{{ tag }} class="{{ class }}">
+    {{ opts.label | raw }}
+  </{{ tag }}>
+{% endmacro title %}

@@ -1,0 +1,114 @@
+title: Contact
+description: '<p>Basic email contact webform.</p>'
+elements: |-
+  email:
+    '#type': email
+    '#title': 'Your Email'
+    '#required': true
+    '#default_value': '[current-user:mail]'
+    '#attributes':
+      class:
+        - shadow-sm
+        - bg-gray-50
+        - border
+        - border-gray-300
+        - text-gray-900
+        - text-sm
+        - rounded-lg
+        - 'focus:ring-primary-500'
+        - 'focus:border-primary-500'
+        - block
+        - w-full
+        - p-2.5
+    '#label_attributes':
+      class:
+        - block
+        - mb-2
+        - text-sm
+        - font-medium
+        - text-gray-900
+  subject:
+    '#type': textfield
+    '#title': Subject
+    '#placeholder': 'Let us know how we can help you'
+    '#required': true
+    '#attributes':
+      class:
+        - block
+        - p-3
+        - w-full
+        - text-sm
+        - text-gray-900
+        - bg-gray-50
+        - rounded-lg
+        - border
+        - border-gray-300
+        - shadow-sm
+        - 'focus:ring-primary-500'
+        - 'focus:border-primary-500'
+    '#label_attributes':
+      class:
+        - block
+        - mb-2
+        - text-sm
+        - font-medium
+        - text-gray-900
+    '#test': 'Testing contact webform from [site:name]'
+  message:
+    '#type': textarea
+    '#title': Message
+    '#placeholder': 'Leave a comment...'
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - 'sm:col-span-2'
+    '#attributes':
+      class:
+        - block
+        - p-2.5
+        - w-full
+        - text-sm
+        - text-gray-900
+        - bg-gray-50
+        - rounded-lg
+        - shadow-sm
+        - border
+        - border-gray-300
+        - 'focus:ring-primary-500'
+        - 'focus:border-primary-500'
+    '#label_attributes':
+      class:
+        - block
+        - mb-2
+        - text-sm
+        - font-medium
+        - text-gray-900
+    '#test': 'Please ignore this email.'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Send message'
+    '#submit__attributes':
+      class:
+        - py-3
+        - px-5
+        - text-sm
+        - font-medium
+        - text-center
+        - text-white
+        - rounded-lg
+        - bg-primary-700
+        - 'sm:w-fit'
+        - 'hover:bg-primary-800'
+        - 'focus:ring-4'
+        - 'focus:outline-none'
+        - 'focus:ring-primary-300'
+settings:
+  confirmation_message: 'Your message has been sent.'
+handlers:
+  email_notification:
+    label: 'Notification par courriel'
+    settings:
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'

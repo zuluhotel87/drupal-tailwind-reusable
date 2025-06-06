@@ -1,0 +1,23 @@
+uuid: 11c5d8e1-34cc-430c-a2f9-a51f2ae1e853
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_is_card
+    - paragraphs.paragraphs_type.content_list
+id: paragraph.content_list.field_is_card
+field_name: field_is_card
+entity_type: paragraph
+bundle: content_list
+label: Card
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

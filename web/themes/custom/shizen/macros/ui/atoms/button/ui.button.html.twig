@@ -1,0 +1,31 @@
+{% macro button(opts) %}
+  {% set styles = {
+    'primary': 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
+    'secondary': 'leading-loose text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-300 focus:ring-gray-100',
+  } %}
+
+  {% set sizes = {
+    'small': 'px-3 py-2 text-sm',
+    'medium': 'px-5 py-2.5 text-sm',
+    'large': 'px-5 py-3 text-base'
+  } %}
+
+  {% set isLink = opts.href is defined and opts.href is not empty %}
+  {% set tag = isLink ? 'a' : 'button' %}
+  {% set type = not isLink ? (opts.type ?? 'button') : 'a' %}
+  {% set style = opts.style ?? 'primary' %}
+  {% set size = opts.size ?? 'large' %}
+
+  {% set baseClass = 'text-center font-medium focus:ring-4 rounded-md focus:outline-none transition-colors duration-200' %}
+  {% set styleClass = styles[style] %}
+  {% set sizeClass = sizes[size] %}
+
+  <{{ tag }}
+    {% if type %}type="{{ type }}"{% endif %}
+    {% if isLink and opts.href %}href="{{ opts.href }}"{% endif %}
+    class="{{ baseClass ~ ' ' ~ styleClass ~ ' ' ~ sizeClass ~ ' ' ~ (opts.class ?? '') }}"
+    {{ opts.ariaLabel ? 'aria-label="' ~ opts.ariaLabel ~ '"' }}
+  >
+    {{ opts.label | raw }}
+  </{{ tag }}>
+{% endmacro button %}

@@ -1,0 +1,20 @@
+uuid: e77d5c5c-d392-4515-9c43-47d8f95f6247
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_related_article_tags
+field_name: field_related_article_tags
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

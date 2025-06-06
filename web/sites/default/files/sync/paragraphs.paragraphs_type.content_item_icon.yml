@@ -1,0 +1,10 @@
+uuid: eaf2f1ab-1152-48ca-9b54-553c31b9bdfd
+langcode: en
+status: true
+dependencies: {  }
+id: content_item_icon
+label: 'Content Item - Icon'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

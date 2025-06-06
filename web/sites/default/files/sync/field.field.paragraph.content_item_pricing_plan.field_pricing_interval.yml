@@ -1,0 +1,23 @@
+uuid: e5fe124f-9795-4ba6-90ff-deef8414f4f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pricing_interval
+    - paragraphs.paragraphs_type.content_item_pricing_plan
+  module:
+    - options
+id: paragraph.content_item_pricing_plan.field_pricing_interval
+field_name: field_pricing_interval
+entity_type: paragraph
+bundle: content_item_pricing_plan
+label: Interval
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: monthly
+default_value_callback: ''
+settings: {  }
+field_type: list_string

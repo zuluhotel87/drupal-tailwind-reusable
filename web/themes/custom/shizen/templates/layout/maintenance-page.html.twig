@@ -1,0 +1,12 @@
+{{ include('@shizen/layout/_partials/header.html.twig') }}
+
+<section class="container">
+  {{ include('@shizen/layout/_partials/status-page.html.twig', {
+    iconName: 'tools',
+    title: 'Under Maintenance'|t,
+    message: 'Our administrators are performing a scheduled maintenance.'|t,
+    showHomepageBtn: false,
+  }) }}
+</section>
+
+{{ include('@shizen/layout/_partials/footer.html.twig') }}

@@ -1,0 +1,59 @@
+uuid: 7175e877-c232-45d5-959a-1b98e68224aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_item_testimonial.field_content_description
+    - field.field.paragraph.content_item_testimonial.field_description
+    - field.field.paragraph.content_item_testimonial.field_media_gallery
+    - field.field.paragraph.content_item_testimonial.field_title
+    - field.field.paragraph.content_item_testimonial.field_title_tag
+    - paragraphs.paragraphs_type.content_item_testimonial
+  module:
+    - entity_reference_revisions
+    - options
+    - text
+id: paragraph.content_item_testimonial.default
+targetEntityType: paragraph
+bundle: content_item_testimonial
+mode: default
+content:
+  field_content_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_gallery:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title_tag:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden: {  }

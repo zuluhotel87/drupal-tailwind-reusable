@@ -1,0 +1,79 @@
+uuid: 9ad36e8f-396f-4368-93b8-110b6aecd71e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_items
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.content_item_media
+  module:
+    - entity_reference_revisions
+id: paragraph.carousel.field_content_items
+field_name: field_content_items
+entity_type: paragraph
+bundle: carousel
+label: 'Content Items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      content_item_media: content_item_media
+    negate: 0
+    target_bundles_drag_drop:
+      carousel:
+        weight: 21
+        enabled: false
+      content_heading:
+        weight: 22
+        enabled: false
+      content_heading_2_columns:
+        weight: 23
+        enabled: false
+      content_item_feature:
+        weight: 21
+        enabled: false
+      content_item_icon:
+        weight: 12
+        enabled: false
+      content_item_media:
+        weight: 23
+        enabled: true
+      content_item_pricing_plan:
+        weight: 24
+        enabled: false
+      content_item_statistic:
+        weight: 13
+        enabled: false
+      content_item_testimonial:
+        weight: 26
+        enabled: false
+      content_list:
+        weight: 27
+        enabled: false
+      content_list_media:
+        weight: 28
+        enabled: false
+      faqs:
+        weight: 29
+        enabled: false
+      image_gallery:
+        weight: 40
+        enabled: false
+      media_gallery:
+        weight: 31
+        enabled: false
+      related_articles:
+        weight: 32
+        enabled: false
+      team_members:
+        weight: 33
+        enabled: false
+      webform:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

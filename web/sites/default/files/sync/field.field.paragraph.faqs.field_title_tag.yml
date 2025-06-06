@@ -1,0 +1,23 @@
+uuid: 95aaf36a-f033-426e-923b-8e30692aa7b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_tag
+    - paragraphs.paragraphs_type.faqs
+  module:
+    - options
+id: paragraph.faqs.field_title_tag
+field_name: field_title_tag
+entity_type: paragraph
+bundle: faqs
+label: 'Title tag'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

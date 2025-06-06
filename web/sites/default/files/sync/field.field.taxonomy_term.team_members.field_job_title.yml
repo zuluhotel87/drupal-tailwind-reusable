@@ -1,0 +1,19 @@
+uuid: 71aca16c-4029-411e-a7da-7fd3d4ef315a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_job_title
+    - taxonomy.vocabulary.team_members
+id: taxonomy_term.team_members.field_job_title
+field_name: field_job_title
+entity_type: taxonomy_term
+bundle: team_members
+label: 'Job title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

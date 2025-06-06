@@ -1,0 +1,20 @@
+uuid: 462d6c28-08db-4330-9549-f0a6b1d6e5fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - cookies
+  theme:
+    - shizen
+id: shizen_cookiesui
+theme: shizen
+region: content
+weight: -3
+provider: null
+plugin: cookies_ui_block
+settings:
+  id: cookies_ui_block
+  label: 'Cookies UI'
+  label_display: '0'
+  provider: cookies
+visibility: {  }

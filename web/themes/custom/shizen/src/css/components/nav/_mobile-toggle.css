@@ -1,0 +1,12 @@
+.hamburger-btn {
+  @apply inline-flex items-center justify-center
+  w-10 h-10 p-2 rounded-lg lg:hidden text-sm
+    /* Light Mode */
+  text-secondary hover:bg-base-hover
+  focus:ring-2 focus:ring-primary-focus
+    /* Dark Mode */
+  dark:text-base-dark-content
+  dark:hover:bg-base-dark-hover
+  dark:focus:ring-primary-focus
+  focus:outline-none;
+}

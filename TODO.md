@@ -1,0 +1,44 @@
+- create tabs macro (menu items, others)
+- cannot load multiple carousel
+- adjust carousel styles based on layout from hook (height, width, etc.) https://swiperjs.com/swiper-api#flip-effect
+- create dropdown macro
+- create macro for spyscroll
+- social icons and href not hardcoded!!
+- Include trust icons on footer if any (trust badges)
+- list dynamically based on item results (1-2-3-4 columns), should have exception if width not large enough
+- add parralax effect on carousel?
+- add new image style for carousel size 1400x400...
+- add shadow black on carousel optional
+
+- prefer uses of attributes over classes directly.
+- add support for slide in effects (style section)
+- add skeleton to image/video/forms macro https://flowbite.com/docs/components/skeleton/
+- use hook to automatically order paragraph alphabetically
+- use default flowbite theming (https://flowbite.com/docs/customize/theming/)
+- accordion with images https://www.waveapps.com/
+- social proof
+- content configuration (address, telephone, etc.)
+- Add telephone in header navigation
+- panorama view
+- Review header effects
+- Rework the nav css
+- Review tailwind config, simplify
+- Theme - dark mode
+- cookiePro by OneTrust
+- metatag not showing in content type.
+- default themed styles (red, pink, orange, green, yellow, blue, purple, gray, black, white, etc.)
+- Calendly integration
+- Mega footer https://flowbite.com/blocks/e-commerce/mega-footers/
+- Webform (request a quote)
+- Validate SEO
+- Validate i18N
+- Validate accessibility (Macro for icon and add sr-only, etc.)
+- Pagespeed
+- add makefile (install, build, deploy, etc.)
+- configure 3rd party
+- admin/reports/status#warning
+- breadcrumbs
+- use twig filtering for various things such as buttonSize, etc.
+- location with schedule time
+- wide or narrow for every paragraph
+- dark - light - primary --> for all paragraphs

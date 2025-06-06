@@ -1,0 +1,46 @@
+{% from "@shizen/macros/ui/atoms/media/ui.media.html.twig" import media %}
+{% from "@shizen/macros/ui/molecules/carousel/ui.carousel.html.twig" import carouselIcons %}
+{% from "@shizen/macros/ui/molecules/header/ui.header.html.twig" import simpleHeader %}
+
+{{ attach_library('shizen/swiper') }}
+
+<div class="swiper h-[400px] rounded-md overflow-hidden">
+  <div class="swiper-wrapper">
+    {% for item in paragraph.field_content_items %}
+      {% set content_item = item.entity %}
+      <div class="swiper-slide">
+        <div>
+          {{ media(
+            content_item.field_media_gallery.entity,
+            {
+              style: 'wide',
+              class: 'w-full h-full object-cover',
+            }
+          ) }}
+          <div class="absolute inset-0 bg-black/75"></div>
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-center">
+          {{ simpleHeader({
+            wrapperClass: 'pl-32 max-w-4xl',
+            titleTag: content_item.field_title_tag.value,
+            titleLabel: content_item.field_title.value,
+            descriptionLabel: content_item.field_description.value,
+            cta: content_item.field_cta.entity,
+          }) }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {{ carouselIcons({
+    event: 'swiper-btn-prev',
+    position: 'start-0',
+    icon_name: 'chevron-left',
+  }) }}
+
+  {{ carouselIcons({
+    event: 'swiper-btn-next',
+    position: 'end-0',
+    icon_name: 'chevron-right',
+  }) }}
+</div>
