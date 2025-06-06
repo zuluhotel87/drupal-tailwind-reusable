@@ -1,15 +1,7 @@
 uuid: d35a94ea-f8bb-42a1-ae48-70fca7e3aaa3
 langcode: en
 status: open
-dependencies:
-  module:
-    - antibot
-    - honeypot
-third_party_settings:
-  antibot:
-    antibot: true
-  honeypot:
-    honeypot: true
+dependencies: {  }
 weight: 0
 open: null
 close: null

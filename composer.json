@@ -17,7 +17,6 @@
     "require": {
         "composer/installers": "^2.3",
         "drupal/admin_toolbar": "^3.5",
-        "drupal/antibot": "^2.0",
         "drupal/config_ignore": "^3.3",
         "drupal/config_split": "^2.0",
         "drupal/cookies": "^1.2",
@@ -28,7 +27,6 @@
         "drupal/gin": "^4.0",
         "drupal/gin_login": "^2.1",
         "drupal/google_analytics": "^4.0",
-        "drupal/honeypot": "^2.2",
         "drupal/layout_options": "^1.7",
         "drupal/metatag": "^2.1",
         "drupal/paragraphs": "^1.18",

@@ -42,3 +42,6 @@
 - location with schedule time
 - wide or narrow for every paragraph
 - dark - light - primary --> for all paragraphs
+- create an install script
+  - ddev drush site:install standard --account-name=admin --account-pass=admin
+  - ddev drush deploy -y

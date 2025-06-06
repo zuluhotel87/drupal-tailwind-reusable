@@ -2,17 +2,9 @@ uuid: f8f6ac89-2b03-4778-aa60-b5a64881ab9f
 langcode: en
 status: open
 dependencies:
-  module:
-    - antibot
-    - honeypot
   enforced:
     module:
       - webform
-third_party_settings:
-  antibot:
-    antibot: true
-  honeypot:
-    honeypot: true
 _core:
   default_config_hash: _je-MWeeJB6gfm6iECiqjcyNetfMFbn-YIInYwZ1gIk
 weight: 0
