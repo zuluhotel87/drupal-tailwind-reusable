@@ -1,14 +1,14 @@
 _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en
-uuid: 93811e52-d5ba-4132-890c-492d344a43d8
-name: Boilerplate
+uuid: 47bb6195-dbe7-4d13-b92b-39e8bcbe1f35
+name: Shizen
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/1
+  front: /node
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

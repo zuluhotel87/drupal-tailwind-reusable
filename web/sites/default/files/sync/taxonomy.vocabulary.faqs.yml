@@ -1,9 +1,0 @@
-uuid: 44a46498-980e-4cf2-ae92-65b6b5ab7f86
-langcode: en
-status: true
-dependencies: {  }
-name: FAQs
-vid: faqs
-description: null
-weight: 0
-new_revision: false

@@ -1,0 +1,38 @@
+uuid: 202f1282-f364-4a00-9b48-3628e4f0afcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.thumbnail
+  theme:
+    - shizen
+id: thumbnail
+label: Thumbnail
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail
+    breakpoint_id: shizen.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail
+    breakpoint_id: shizen.desktop
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail
+    breakpoint_id: shizen.tablet
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail
+    breakpoint_id: shizen.tablet
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail
+    breakpoint_id: shizen.mobile
+    multiplier: 1x
+breakpoint_group: shizen
+fallback_image_style: thumbnail

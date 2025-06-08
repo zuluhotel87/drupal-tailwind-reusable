@@ -1,21 +1,3 @@
-@import './components/cookies/index.css';
-@import './components/nav/index.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .container-light {
-    @apply
-    bg-base-container
-    dark:bg-base-dark-focus
-    border-b
-    border-stroke-focus
-    dark:border-stroke-dark-focus;
-  }
-
-  section {
-    @apply py-8 lg:py-20;
-  }
-}

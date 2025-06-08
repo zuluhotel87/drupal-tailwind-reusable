@@ -2,9 +2,12 @@ name: Shizen
 type: theme
 description: A base theme using Drupal core markup and CSS.
 core_version_requirement: ^11
-package: Core
-version: VERSION
+package: Shizen
+version: 1.0.0
 base theme: false
+
+breakpoints:
+  - shizen.breakpoints.yml
 
 libraries:
   - shizen/base

@@ -1,15 +1,17 @@
-uuid: 60b00d86-85dd-4963-a3e0-9eeba718f1d2
+uuid: d365deca-dada-4ce5-8dca-07dcbcc302a6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.field_article_tags
-    - field.field.node.article.field_description
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.article.body
+    - field.field.node.article.comment
     - field.field.node.article.field_image
-    - field.field.node.article.field_paragraphs
+    - field.field.node.article.field_tags
     - node.type.article
   module:
-    - entity_reference_revisions
+    - comment
+    - text
     - user
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
@@ -18,22 +20,35 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
-  field_paragraphs:
-    type: entity_reference_revisions_entity_view
+  body:
+    type: text_default
     label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
+  comment:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
-  field_article_tags: true
-  field_description: true
   field_image: true
   langcode: true

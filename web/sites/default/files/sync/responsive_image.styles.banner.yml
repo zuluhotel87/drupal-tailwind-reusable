@@ -1,0 +1,40 @@
+uuid: 21c6f4b3-045c-4395-9b36-1664f964ac81
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner_desktop_16_9
+    - image.style.banner_mobile_16_9
+    - image.style.banner_tablet_16_9
+  theme:
+    - shizen
+id: banner
+label: Banner
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_desktop_16_9
+    breakpoint_id: shizen.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_desktop_16_9
+    breakpoint_id: shizen.desktop
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_tablet_16_9
+    breakpoint_id: shizen.tablet
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_tablet_16_9
+    breakpoint_id: shizen.tablet
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_mobile_16_9
+    breakpoint_id: shizen.mobile
+    multiplier: 1x
+breakpoint_group: shizen
+fallback_image_style: banner_desktop_16_9

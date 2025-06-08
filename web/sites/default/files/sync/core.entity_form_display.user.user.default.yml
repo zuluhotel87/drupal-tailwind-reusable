@@ -1,4 +1,4 @@
-uuid: 0c7ee45d-585b-436b-8759-102f6d9d153e
+uuid: b909421b-a153-4374-8781-69bcb75acf19
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,7 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
+    - path
     - user
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA

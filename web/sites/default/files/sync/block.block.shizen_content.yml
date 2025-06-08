@@ -1,4 +1,4 @@
-uuid: 14ee72d7-deb2-486e-ab3c-aa08a32eebcc
+uuid: dd1669db-2eef-4c6a-b273-26d8b04e4fbd
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   theme:
     - shizen
 _core:
-  default_config_hash: a0Yyx1GeyKarZ4T_yXQBR_ZFKnXiFLtxAb6gWLd8nr0
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
 id: shizen_content
 theme: shizen
 region: content

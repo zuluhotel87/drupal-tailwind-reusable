@@ -1,0 +1,21 @@
+uuid: 4113368b-4310-40ac-b6f6-abd96a8faf86
+langcode: en
+status: true
+dependencies: {  }
+name: content_desktop_16_9
+label: 'Content Desktop 16:9 (1280x720)'
+effects:
+  8e1b7b75-7ef3-44d2-97ee-62be8b0e96d9:
+    uuid: 8e1b7b75-7ef3-44d2-97ee-62be8b0e96d9
+    id: image_scale
+    weight: 1
+    data:
+      width: 1280
+      height: 720
+      upscale: false
+  aed90b76-d7a8-482e-bc18-02bcc6e3e62c:
+    uuid: aed90b76-d7a8-482e-bc18-02bcc6e3e62c
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

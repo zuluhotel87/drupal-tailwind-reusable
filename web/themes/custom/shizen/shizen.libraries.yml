@@ -6,22 +6,3 @@ base:
     dist/assets/main.js: {}
   dependencies:
     - core/drupal
-
-swiper:
-  css:
-    theme:
-      dist/assets/swiper.css: {}
-  js:
-    dist/assets/swiper.js: { attributes: { type: 'module' } }
-  dependencies:
-    - core/jquery
-    - core/drupalSettings
-  footer: true
-
-accordion:
-  js:
-    dist/assets/accordion.js: { attributes: { type: 'module' } }
-  dependencies:
-    - core/jquery
-    - core/drupalSettings
-  footer: true

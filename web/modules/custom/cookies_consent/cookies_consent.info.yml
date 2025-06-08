@@ -1,7 +1,0 @@
-name: 'Cookies Customizations'
-type: module
-description: 'Customizations related to drupal/cookies'
-core_version_requirement: ^11
-package: 'Shizen'
-dependencies:
-  - COOKiES:cookies

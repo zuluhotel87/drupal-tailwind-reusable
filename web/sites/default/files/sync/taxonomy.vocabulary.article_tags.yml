@@ -1,9 +1,0 @@
-uuid: 42ca91df-5adf-4ff0-9864-18c85ed078e3
-langcode: en
-status: true
-dependencies: {  }
-name: 'Article Tags'
-vid: article_tags
-description: null
-weight: 0
-new_revision: false

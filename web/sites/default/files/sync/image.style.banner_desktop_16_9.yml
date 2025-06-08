@@ -1,0 +1,21 @@
+uuid: 155400d5-4864-44fd-ac62-f0e2b77354a0
+langcode: en
+status: true
+dependencies: {  }
+name: banner_desktop_16_9
+label: 'Banner Desktop 16:9 (1920x1080)'
+effects:
+  f47ab502-c6b0-4ffd-8258-836d36ebe42f:
+    uuid: f47ab502-c6b0-4ffd-8258-836d36ebe42f
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: 1080
+      upscale: false
+  751023a5-dcec-4727-a196-7824ee69bab7:
+    uuid: 751023a5-dcec-4727-a196-7824ee69bab7
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

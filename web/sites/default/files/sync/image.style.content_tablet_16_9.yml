@@ -1,0 +1,21 @@
+uuid: f49f1d48-6fc6-4d06-9d82-d40e0a9064de
+langcode: en
+status: true
+dependencies: {  }
+name: content_tablet_16_9
+label: 'Content Tablet 16:9 (960x540)'
+effects:
+  8e1b7b75-7ef3-44d2-97ee-62be8b0e96d9:
+    uuid: 8e1b7b75-7ef3-44d2-97ee-62be8b0e96d9
+    id: image_scale
+    weight: 1
+    data:
+      width: 960
+      height: 540
+      upscale: false
+  aed90b76-d7a8-482e-bc18-02bcc6e3e62c:
+    uuid: aed90b76-d7a8-482e-bc18-02bcc6e3e62c
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

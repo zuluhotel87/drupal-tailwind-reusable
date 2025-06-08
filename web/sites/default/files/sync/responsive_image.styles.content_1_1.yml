@@ -1,0 +1,40 @@
+uuid: 567683b4-c4b5-417c-aff1-e2456ef5afc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.content_desktop_1_1
+    - image.style.content_mobile_1_1
+    - image.style.content_tablet_1_1
+  theme:
+    - shizen
+id: content_1_1
+label: 'Content 1:1'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: content_desktop_1_1
+    breakpoint_id: shizen.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: content_desktop_1_1
+    breakpoint_id: shizen.desktop
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: content_tablet_1_1
+    breakpoint_id: shizen.tablet
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: content_tablet_1_1
+    breakpoint_id: shizen.tablet
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: content_mobile_1_1
+    breakpoint_id: shizen.mobile
+    multiplier: 1x
+breakpoint_group: shizen
+fallback_image_style: content_desktop_1_1

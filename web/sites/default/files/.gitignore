@@ -1,9 +1,0 @@
-*
-!media-icons
-!media-icons/**
-!private
-!sync
-!sync/**
-!translations
-!translations/**
-!.gitignore

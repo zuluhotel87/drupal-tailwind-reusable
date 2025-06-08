@@ -1,4 +1,4 @@
-uuid: b5a9aefe-463b-4379-9fb3-29deeac935c8
+uuid: dc706a8b-74a3-4db0-8219-a904addf0d8d
 langcode: en
 status: true
 dependencies:
@@ -14,7 +14,7 @@ bundle: remote_video
 label: 'Video URL'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -1,0 +1,21 @@
+uuid: 788fa196-97a9-4c66-8b97-6c3d94d67962
+langcode: en
+status: true
+dependencies: {  }
+name: content_desktop_1_1
+label: 'Content Desktop 1:1 (720x720)'
+effects:
+  269df0b5-9602-4875-bbbc-1bca14723ef4:
+    uuid: 269df0b5-9602-4875-bbbc-1bca14723ef4
+    id: image_scale
+    weight: 1
+    data:
+      width: 720
+      height: 720
+      upscale: false
+  25b61642-10eb-47df-b335-a41c445cb785:
+    uuid: 25b61642-10eb-47df-b335-a41c445cb785
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

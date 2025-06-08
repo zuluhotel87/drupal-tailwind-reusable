@@ -4,17 +4,9 @@ declare(strict_types=1);
 
 // Name all preprocessors being used.
 $preprocess = [
-  'block',
   'field',
-  'form',
-  'html',
   'links',
-  'node',
-  'page',
-  'paragraph',
   'region',
-  'taxonomy',
-  'view',
 ];
 
 // Include all files in the preprocesses folder.

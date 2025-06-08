@@ -1,0 +1,21 @@
+uuid: 438b5095-6a84-4d10-9e86-e11657c71731
+langcode: en
+status: true
+dependencies: {  }
+name: banner_mobile_16_9
+label: 'Banner Mobile 16:9 (960x540)'
+effects:
+  f47ab502-c6b0-4ffd-8258-836d36ebe42f:
+    uuid: f47ab502-c6b0-4ffd-8258-836d36ebe42f
+    id: image_scale
+    weight: 1
+    data:
+      width: 960
+      height: 540
+      upscale: false
+  751023a5-dcec-4727-a196-7824ee69bab7:
+    uuid: 751023a5-dcec-4727-a196-7824ee69bab7
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

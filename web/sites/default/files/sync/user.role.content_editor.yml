@@ -1,16 +1,19 @@
-uuid: a06fb5de-0642-48f6-ab6c-0c8317595e87
+uuid: cf3bad3a-a6ac-4e42-b0b0-4fbc2467cf89
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.article
     - node.type.page
+    - taxonomy.vocabulary.tags
   module:
+    - comment
     - contextual
     - file
     - node
     - path
     - system
+    - taxonomy
     - toolbar
 _core:
   default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
@@ -27,6 +30,7 @@ permissions:
   - 'administer url aliases'
   - 'create article content'
   - 'create page content'
+  - 'create terms in tags'
   - 'create url aliases'
   - 'delete article revisions'
   - 'delete own article content'
@@ -34,7 +38,9 @@ permissions:
   - 'delete own page content'
   - 'delete page revisions'
   - 'edit own article content'
+  - 'edit own comments'
   - 'edit own page content'
+  - 'edit terms in tags'
   - 'revert all revisions'
   - 'view all revisions'
   - 'view own unpublished content'
