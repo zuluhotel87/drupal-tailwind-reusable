@@ -5,15 +5,14 @@
 {% block content %}
   {% if site_logo %}
     <a href="{{ path('<front>') }}" rel="home" class="flex items-center space-x-3">
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" fetchpriority="high" class="h-8 my-auto" />
+      <img src="{{ site_logo }}" alt="{{ site_name }}" fetchpriority="high" class="h-8 my-auto" />
       {% if site_name %}
-        {{ title({
-          tag: 'span',
-          label: site_name,
-          style: 'h5',
-        }) }}
+        {{ title({tag: 'span', label: site_name, style: 'h4'}) }}
       {% endif %}
     </a>
   {% endif %}
-  {{ site_slogan }}
+
+  {% if site_logo %}
+    {{ site_slogan }}
+  {% endif %}
 {% endblock %}

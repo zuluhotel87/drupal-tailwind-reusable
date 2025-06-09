@@ -56,8 +56,8 @@ function shizen_preprocess_field__paragraph__field_media(array &$variables): voi
       '#theme' => 'responsive_image',
       '#responsive_image_style_id' => $style,
       '#uri' => $file->getFileUri(),
-      '#alt' => $imageField->alt ?? '',
-      '#title' => $imageField->title ?? '',
+      '#alt' => $mediaImage->alt ?? '',
+      '#title' => $mediaImage->title ?? '',
     ];
   }
 }

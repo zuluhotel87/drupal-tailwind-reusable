@@ -1,3 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Import custom CSS files */
+@import "./theme.css";
+@import "./components/base.css";
+@import "./components/container.css";

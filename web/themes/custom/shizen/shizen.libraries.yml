@@ -6,3 +6,9 @@ base:
     dist/assets/main.js: {}
   dependencies:
     - core/drupal
+
+sticky-header:
+  js:
+    dist/assets/sticky-header.js: {}
+  dependencies:
+    - core/jquery
