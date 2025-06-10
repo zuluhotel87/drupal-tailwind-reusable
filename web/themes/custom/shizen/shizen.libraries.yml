@@ -7,8 +7,10 @@ base:
   dependencies:
     - core/drupal
 
+menu-toggle:
+  js:
+    dist/assets/menu-toggle.js: {}
+
 sticky-header:
   js:
     dist/assets/sticky-header.js: {}
-  dependencies:
-    - core/jquery

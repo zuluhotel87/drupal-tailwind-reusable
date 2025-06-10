@@ -1,15 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header.sticky');
+  const header = document.querySelector('header');
   const container = header?.querySelector('.container');
   const adminToolbar = document.getElementById('toolbar-bar');
   if (!header || !container) return;
 
-  const MOBILE_BREAKPOINT = 768;
-
-  const isMobile = () => window.innerWidth <= MOBILE_BREAKPOINT;
-
   const updateOffset = () => {
-    const topOffset = (!adminToolbar || isMobile()) ? 0 : adminToolbar.offsetHeight;
+    const topOffset = !adminToolbar ? 0 : adminToolbar.offsetHeight;
     header.style.top = `${topOffset}px`;
   };
 

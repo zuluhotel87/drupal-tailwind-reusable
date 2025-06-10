@@ -1,0 +1,7 @@
+*
+!./media-icons
+!./media-icons/**
+!./sync
+!./sync/**
+!.gitignore
+!.htaccess

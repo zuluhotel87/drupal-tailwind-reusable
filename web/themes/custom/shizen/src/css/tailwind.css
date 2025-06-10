@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 /* Import custom CSS files */
+@import "./base.css";
 @import "./theme.css";
-@import "./components/base.css";
+
 @import "./components/container.css";

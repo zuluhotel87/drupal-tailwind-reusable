@@ -1,0 +1,10 @@
+@layer base {
+  body {
+    @apply text-dark;
+  }
+
+  /* Using hidden + lg:block within twig does not work properly */
+  .desktop-only {
+    @apply hidden lg:block
+  }
+}
