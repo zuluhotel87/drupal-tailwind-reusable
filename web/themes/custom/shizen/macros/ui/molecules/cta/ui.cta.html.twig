@@ -26,12 +26,14 @@
           size: opts.ctaSize,
           href: primaryLinkUri,
           label: primaryLinkContent,
+          gaCategory: 'cta-primary'
         }) }}
       {% else %}
         {{ link({
           href: primaryLinkUri,
           class: opts.primaryLinkClass ?? 'text-primary',
           label: primaryLinkContent,
+          gaCategory: 'cta-primary'
         }) }}
       {% endif %}
     {% endif %}
@@ -42,6 +44,7 @@
         size: opts.ctaSize,
         href: secondaryLinkUri,
         label: secondaryLink.title,
+        gaCategory: 'cta-secondary'
       }) }}
     {% endif %}
   </div>

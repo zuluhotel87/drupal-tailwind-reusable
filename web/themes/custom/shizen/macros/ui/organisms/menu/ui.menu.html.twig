@@ -1,0 +1,44 @@
+{% macro menu_links(items, attributes, menu_level, is_footer, gaCategory) %}
+  {% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+  {% from "@shizen/macros/ui/atoms/link/ui.link.html.twig" import link %}
+
+  {% import _self as menus %}
+
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('flex flex-col mt-4 rounded-lg lg:space-x-8 lg:flex-row lg:mt-0 lg:border-0') }} role="menubar">
+    {% else %}
+      <ul class="py-2 text-sm" role="menu" aria-label="{{ 'Submenu'|t }}">
+    {% endif %}
+
+    {% for item in items %}
+      <li{{ item.attributes.addClass('block py-2 px-3 lg:p-0 rounded-sm hover:bg-muted-light lg:hover:bg-transparent lg:border-0') }} role="none">
+        {% if item.below %}
+          <button id="dropdownNavbarLink-{{ loop.index }}"
+                  data-dropdown-toggle="dropdownNavbar-{{ loop.index }}"
+                  class="dropdown-btn"
+                  role="menuitem"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="dropdownNavbar-{{ loop.index }}">
+            {{ item.title }}
+            {{ icon('chevron-down') }}
+          </button>
+          <div id="dropdownNavbar-{{ loop.index }}"
+               class="nav-dropdown"
+               role="menu">
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          </div>
+        {% else %}
+          {{ link({
+            label: item.title,
+            href: item.url,
+            class: (item.in_active_trail ? 'nav-link-active' : 'nav-link') ~ (is_footer ? ' hover:underline' : ''),
+            gaCategory: gaCategory
+          }) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

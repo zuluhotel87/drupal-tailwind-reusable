@@ -1,0 +1,23 @@
+uuid: a7a4284f-970a-4a57-ae02-67f098b64214
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_height
+    - paragraphs.paragraphs_type.media_gallery
+id: paragraph.media_gallery.field_height
+field_name: field_height
+entity_type: paragraph
+bundle: media_gallery
+label: Height
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

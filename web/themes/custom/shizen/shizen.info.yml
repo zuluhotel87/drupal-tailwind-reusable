@@ -9,5 +9,12 @@ base theme: false
 breakpoints:
   - shizen.breakpoints.yml
 
+regions:
+  header: Header
+  primary_menu: 'Primary Menu'
+  content: Content
+  footer_menu: 'Footer Menu'
+  footer_social: 'Footer Social'
+
 libraries:
   - shizen/base

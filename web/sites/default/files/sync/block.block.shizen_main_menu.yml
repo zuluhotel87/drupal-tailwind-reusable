@@ -13,7 +13,7 @@ _core:
 id: shizen_main_menu
 theme: shizen
 region: primary_menu
-weight: 0
+weight: -2
 provider: null
 plugin: 'system_menu_block:main'
 settings:

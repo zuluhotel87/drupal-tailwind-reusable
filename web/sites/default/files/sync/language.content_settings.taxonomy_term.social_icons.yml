@@ -1,0 +1,11 @@
+uuid: a328691f-0658-4307-9a4f-739bb613124d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.social_icons
+id: taxonomy_term.social_icons
+target_entity_type_id: taxonomy_term
+target_bundle: social_icons
+default_langcode: site_default
+language_alterable: false

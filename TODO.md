@@ -1,26 +1,34 @@
 - flowbite theming? (https://flowbite.com/docs/customize/theming/)
-- Review tailwind config (update)
-- header variations (see bootstrap?)
-- footer variations (see bootstrap?)
-- social icons from taxonomy
-- trust badges from taxonomy
-- find cookie GDPR (cookiePro by OneTrust?)
-- add support for css effects in paragraphs
-- add skeleton for lazy loading (media) (see big pipe?)
-- order paragraphs alphabetically
-- metatags
-- calendly integration
-- Webform (request a quote)
-- create GA analytics macro
-- responsive image
-  - make it work
 - paragraph
   - make use of content
     - width: full screen, wide, narrow
     - theme dark - light - primary
     - height
     - header size
-    -
+    - etc
+- Webform (request a quote)
 - create an install script
   - ddev drush site:install standard --account-name=admin --account-pass=admin
   - ddev drush deploy -y
+- blog
+- news
+- events
+
+paragraph
+
+- add support for css effects in paragraphs
+- can define image dimension in media gallery
+- simpleContent (reusable title, description, cta)
+- image with heading
+- newsletter (image, video, etc.)
+- social proof icons
+- cover image with CTA
+- simpleCards
+  - card (image, title, description, ctas, layout)
+- carousel
+  - slides
+- feature list
+- image with feature list
+- feature list with icons
+- feature icons and cta
+-

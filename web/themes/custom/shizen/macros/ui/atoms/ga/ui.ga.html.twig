@@ -1,0 +1,11 @@
+{% macro ga_event(category, action, label = '', value = '') %}
+  data-ga-event
+  data-ga-category="{{ category }}"
+  data-ga-action="{{ action }}"
+  {% if label %}
+    data-ga-label="{{ label }}"
+  {% endif %}
+  {% if value is not empty %}
+    data-ga-value="{{ value }}"
+  {% endif %}
+{% endmacro %}

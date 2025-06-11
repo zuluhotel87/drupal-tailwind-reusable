@@ -1,18 +1,34 @@
 {% extends "block.html.twig" %}
 
+{% from "@shizen/macros/ui/atoms/link/ui.link.html.twig" import link %}
 {% from "@shizen/macros/ui/atoms/title/ui.title.html.twig" import title %}
 
 {% block content %}
   {% if site_logo %}
-    <a href="{{ path('<front>') }}" rel="home" class="flex items-center space-x-3">
-      <img src="{{ site_logo }}" alt="{{ site_name }}" fetchpriority="high" class="h-8 my-auto" />
+    {% set link_content %}
+      <img src="{{ site_logo }}"
+           alt=""
+           fetchpriority="high"
+           class="h-8 my-auto"
+           role="presentation"
+           aria-hidden="true" />
       {% if site_name %}
         {{ title({tag: 'span', label: site_name, style: 'h4'}) }}
       {% endif %}
-    </a>
+    {% endset %}
+
+    {{ link({
+      label: link_content,
+      href: path('<front>'),
+      class: 'flex items-center space-x-3',
+      gaCategory: 'brand-block',
+      attributes: {
+        rel: 'home',
+      }
+    }) }}
   {% endif %}
 
   {% if site_logo %}
-    {{ site_slogan }}
+    <p>{{ site_slogan }}</p>
   {% endif %}
 {% endblock %}

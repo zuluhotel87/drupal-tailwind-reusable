@@ -1,0 +1,19 @@
+uuid: f8854560-5fc0-46b8-a4a9-b51309d6351e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.social_icons
+id: taxonomy_term.social_icons.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: social_icons
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 94433826-0ced-4afd-8f6e-b6159970f3fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_responsive_image
+    - paragraphs.paragraphs_type.media_gallery
+  module:
+    - options
+id: paragraph.media_gallery.field_responsive_image
+field_name: field_responsive_image
+entity_type: paragraph
+bundle: media_gallery
+label: 'Responsive Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

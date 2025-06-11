@@ -1,0 +1,6 @@
+{% macro skeleton(content) %}
+  <div class="relative w-full overflow-hidden">
+    <div class="skeleton-loader absolute inset-0 bg-muted-light animate-pulse z-0"></div>
+    {{ content }}
+  </div>
+{% endmacro skeleton %}

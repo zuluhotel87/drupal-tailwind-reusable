@@ -1,0 +1,33 @@
+uuid: 734098b0-6b87-49c1-8514-953ea290836a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_responsive_image
+field_name: field_responsive_image
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: banner
+      label: Banner
+    -
+      value: content_1_1
+      label: 'Content 1:1'
+    -
+      value: content_16_9
+      label: 'Content 16:9'
+    -
+      value: thumbnail
+      label: Thumbnail
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

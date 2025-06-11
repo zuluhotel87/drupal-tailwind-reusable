@@ -1,0 +1,9 @@
+uuid: a611a45d-0bde-4e38-b13b-ac7d9b6db2ae
+langcode: en
+status: true
+dependencies: {  }
+name: 'Social Icons'
+vid: social_icons
+description: 'Defines social media entries for rendering of social media links across the site.'
+weight: 0
+new_revision: false

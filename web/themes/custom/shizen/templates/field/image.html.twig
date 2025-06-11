@@ -1,0 +1,7 @@
+{% from "@shizen/macros/ui/atoms/skeleton/ui.skeleton.html.twig" import skeleton %}
+
+{% set img_content %}
+  <img{{ attributes }} loading="lazy"/>
+{% endset %}
+
+{{ skeleton(img_content) }}

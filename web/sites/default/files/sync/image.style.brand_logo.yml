@@ -1,0 +1,21 @@
+uuid: 07828a06-0e63-4528-98db-bcae72bd57c8
+langcode: en
+status: true
+dependencies: {  }
+name: brand_logo
+label: 'Brand Logo'
+effects:
+  3dd7e111-a0a1-4dea-9b38-e639955ebd7b:
+    uuid: 3dd7e111-a0a1-4dea-9b38-e639955ebd7b
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 125
+      upscale: false
+  a7c12caf-b6cd-40d6-89d5-b205e27e3224:
+    uuid: a7c12caf-b6cd-40d6-89d5-b205e27e3224
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

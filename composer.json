@@ -26,6 +26,7 @@
         "drupal/gin": "^4.0",
         "drupal/gin_login": "^2.1",
         "drupal/google_analytics": "^4.0",
+        "drupal/klaro": "^3.0",
         "drupal/layout_options": "^1.7",
         "drupal/metatag": "^2.1",
         "drupal/minifyjs": "^3.0",
@@ -41,8 +42,12 @@
         "drupal/twig_tweak": "^3.4",
         "drupal/ui_icons": "^1.1@beta",
         "drupal/webform": "^6.3@beta",
-        "drupal/webprofiler": "^11.1",
         "drush/drush": "^13.3"
+    },
+    "require-dev": {
+        "drupal/webprofiler": "^11.1",
+        "phpunit/phpunit": "^10.5",
+        "slevomat/coding-standard": "^8.19"
     },
     "conflict": {
         "drupal/drupal": "*"

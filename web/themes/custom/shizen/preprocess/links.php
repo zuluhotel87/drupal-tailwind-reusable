@@ -2,7 +2,13 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Form\FormStateInterface;
+
 function shizen_preprocess_links__language_block(array &$variables): void
 {
-    $variables['current_language'] = Drupal::languageManager()->getCurrentLanguage()->getId();
+  $currentLanguage = Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  if (isset($variables['links'][$currentLanguage])) {
+    unset($variables['links'][$currentLanguage]);
+  }
 }

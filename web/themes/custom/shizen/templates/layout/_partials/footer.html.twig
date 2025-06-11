@@ -1,17 +1,32 @@
 {% from "@shizen/macros/ui/atoms/link/ui.link.html.twig" import link %}
 
-{% if page.footer %}
-  <footer class="bg-light border-t border-muted-light">
-    <div class="container flex items-center py-10">
-      <span>© {{ 'now'|date('Y') ~ ' |' }}</span>
-      <span class="mx-1"> {{ link({
-          label: site_name,
-          href: path('<front>'),
-          attributes: 'rel="home"'
-        }) }}</span>
-      <span>{{ '- ' ~ 'All Rights Reserved'|t }}.</span>
+<footer class="bg-light border-t border-muted-light">
+  <div class="container py-10">
+    {% if page.footer_menu %}
+      <nav
+        aria-label="{{ 'Footer menu'|t }}"
+        class="max-h-none overflow-visible block w-full w-auto">
+        {{ page.footer_menu }}
+      </nav>
+    {% endif %}
 
-      {{ page.footer }}
-    </div>
-  </footer>
-{% endif %}
+    {% if page.footer_social %}
+      <hr class="my-5">
+      <div class="flex justify-between items-center text-light-dark">
+        <div>
+          <span>© {{ 'now'|date('Y') ~ ' |' }}</span>
+          <span class="mx-1"> {{ link({
+              label: site_name,
+              href: path('<front>'),
+              attributes: 'rel="home"',
+              class: 'hover:underline',
+              gaCategory: 'copyright',
+            }) }}</span>
+          <span>{{ '- ' ~ 'All Rights Reserved'|t }}.</span>
+        </div>
+
+        {{ page.footer_social }}
+      </div>
+    {% endif %}
+  </div>
+</footer>

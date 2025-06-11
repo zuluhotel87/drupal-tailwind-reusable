@@ -1,0 +1,9 @@
+{% from "@shizen/macros/ui/organisms/menu/ui.menu.html.twig" import menu_links %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  https://twig.symfony.com/doc/3.x/tags/macro.html
+#}
+<div class="flex justify-end">
+  {{ menu_links(items, attributes, 0, 1, 'menu-footer') }}
+</div>

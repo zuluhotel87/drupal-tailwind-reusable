@@ -4,13 +4,31 @@ base:
       dist/assets/tailwind.css: {}
   js:
     dist/assets/main.js: {}
+
+ga-events:
+  js:
+    dist/assets/ga-events.js: {}
   dependencies:
     - core/drupal
+    - core/once
+
+lazy-image-skeleton:
+  js:
+    dist/assets/lazy-image-skeleton.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
 
 menu-toggle:
   js:
     dist/assets/menu-toggle.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
 
 sticky-header:
   js:
     dist/assets/sticky-header.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

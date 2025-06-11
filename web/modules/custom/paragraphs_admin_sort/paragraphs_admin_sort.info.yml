@@ -1,0 +1,9 @@
+name: "Paragraphs Admin Sort"
+type: module
+description: "Automatically sorts paragraph items alphabetically in paragraph fields."
+package: Shizen
+core_version_requirement: ^11
+dependencies:
+  - paragraphs:paragraphs
+  - core:field
+  - core:node

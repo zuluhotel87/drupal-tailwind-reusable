@@ -1,0 +1,8 @@
+name: "Social Icons"
+type: module
+description: "Provides a block that displays social media icons using taxonomy terms."
+package: Shizen
+core_version_requirement: ^11
+dependencies:
+  - core:taxonomy
+  - core:block

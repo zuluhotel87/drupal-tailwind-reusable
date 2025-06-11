@@ -11,9 +11,9 @@ $preprocess = [
 
 // Include all files in the preprocesses folder.
 foreach ($preprocess as $preprocessor) {
-    $filepath = __DIR__ . '/preprocess/' . $preprocessor . '.php';
+  $filepath = __DIR__ . '/preprocess/' . $preprocessor . '.php';
 
-    if (file_exists($filepath)) {
-        require_once $filepath;
-    }
+  if (file_exists($filepath)) {
+    require_once $filepath;
+  }
 }

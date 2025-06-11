@@ -30,6 +30,8 @@ function shizen_preprocess_field__paragraph__field_media(array &$variables): voi
   $style = $paragraph->hasField($field) && !$paragraph->get($field)->isEmpty()
     ? $paragraph->get($field)->value
     : $defaultImageStyle;
+  $imgWidth = $paragraph->hasField('field_width') ? $paragraph->get('field_width')->value : null;
+  $imgHeight = $paragraph->hasField('field_height') ? $paragraph->get('field_height')->value : null;
 
   foreach ($variables['items'] as $delta => &$item) {
     /** @var MediaInterface $media */
@@ -58,6 +60,10 @@ function shizen_preprocess_field__paragraph__field_media(array &$variables): voi
       '#uri' => $file->getFileUri(),
       '#alt' => $mediaImage->alt ?? '',
       '#title' => $mediaImage->title ?? '',
+      '#attributes' => [
+        'width' => $imgWidth,
+        'height' => $imgHeight,
+      ],
     ];
   }
 }

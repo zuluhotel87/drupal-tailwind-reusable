@@ -1,24 +1,18 @@
-{% if links -%}
-  {%- if heading -%}
-    {%- if heading.level -%}
-      <{{ heading.level }}{{ heading.attributes }}>{{ heading.text }}</{{ heading.level }}>
-    {%- else -%}
-      <h2{{ heading.attributes }}>{{ heading.text }}</h2>
-    {%- endif -%}
-  {%- endif -%}
-  <ul class="nav-menu"{{ attributes }}>
-    {%- for item in links -%}
-      {% if not item.link['#options'].language or item.link['#options'].language.id != current_language %}
-        <li {{ item.attributes }} class="nav-link">
-          {%- if item.link -%}
-            {{ item.link }}
-          {%- elseif item.text_attributes -%}
-            <span{{ item.text_attributes }}>{{ item.text }}</span>
-          {%- else -%}
-            {{ item.text }}
-          {%- endif -%}
-        </li>
-      {% endif %}
-    {%- endfor -%}
-  </ul>
-{%- endif %}
+{% from "@shizen/macros/ui/atoms/link/ui.link.html.twig" import link %}
+
+<ul{{ attributes }}>
+  {% for item in links %}
+    <li{{ item.attributes.addClass('block py-2 px-3 lg:p-0 rounded-sm hover:bg-muted-light lg:hover:bg-transparent lg:border-0') }}>
+      {{ link({
+        label: item.text,
+        href: item.attributes.hreflang != 'en' ? item.attributes.hreflang : '/',
+        class: 'language-link',
+        gaCategory: 'language-switcher',
+        attributes: {
+          hreflang: item.attributes.hreflang,
+          data_drupal_link_system_path: '<front>',
+        }
+      }) }}
+    </li>
+  {% endfor %}
+</ul>

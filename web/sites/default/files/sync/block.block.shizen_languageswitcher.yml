@@ -1,0 +1,20 @@
+uuid: ca716208-20ef-431d-9976-bdcaaad09824
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - shizen
+id: shizen_languageswitcher
+theme: shizen
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: '0'
+  provider: language
+visibility: {  }

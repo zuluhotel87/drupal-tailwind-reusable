@@ -1,38 +1,7 @@
-{% import _self as menus %}
+{% from "@shizen/macros/ui/organisms/menu/ui.menu.html.twig" import menu_links %}
 
 {#
-  We call a macro which calls itself to render the full tree.
-  https://twig.symfony.com/doc/3.x/tags/macro.html
+We call a macro which calls itself to render the full tree.
+https://twig.symfony.com/doc/3.x/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
-
-{% macro menu_links(items, attributes, menu_level) %}
-  {% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
-
-  {% import _self as menus %}
-  {% if items %}
-    {% if menu_level == 0 %}
-<ul{{ attributes.addClass('flex flex-col mt-4 rounded-lg lg:space-x-8 lg:flex-row lg:mt-0 lg:border-0') }}>
-  {% else %}
-  <ul class="py-2 text-sm">
-    {% endif %}
-    {% for item in items %}
-      <li{{ item.attributes.addClass('block py-2 px-3 lg:p-0 rounded-sm hover:bg-muted-light lg:hover:bg-transparent lg:border-0') }}>
-        {% if item.below %}
-          <button id="dropdownNavbarLink-{{ loop.index }}"
-                  data-dropdown-toggle="dropdownNavbar-{{ loop.index }}"
-                  class="dropdown-btn">
-            {{ item.title }}
-            {{ icon('chevron-down') }}
-          </button>
-          <div id="dropdownNavbar-{{ loop.index }}" class="nav-dropdown">
-            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-          </div>
-        {% else %}
-          {{ link(item.title, item.url, {class: [item.in_active_trail ? 'nav-link-active' : 'nav-link']}) }}
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  {% endmacro %}
+{{ menu_links(items, attributes, 0, 0, 'menu-main') }}

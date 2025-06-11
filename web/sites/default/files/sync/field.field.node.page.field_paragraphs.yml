@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.page
-    - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.media_gallery
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -22,10 +22,16 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      banner: banner
+      media_gallery: media_gallery
     negate: 0
     target_bundles_drag_drop:
-      banner:
-        weight: 2
+      aaaa:
+        weight: -5
+        enabled: true
+      media_gallery:
+        weight: -7
+        enabled: true
+      zzzz:
+        weight: -6
         enabled: true
 field_type: entity_reference_revisions
