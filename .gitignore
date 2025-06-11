@@ -12,6 +12,7 @@
 !composer.lock
 !package.json
 !package-lock.json
+!phpcs.xml
 !tailwind.config.js
 !TODO.md
 !vite.config.js

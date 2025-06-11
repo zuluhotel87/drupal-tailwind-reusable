@@ -1,0 +1,22 @@
+shizen.mobile:
+  label: 'Mobile (sm)'
+  mediaQuery: 'all and (min-width: 640px)'
+  weight: 0
+  multipliers:
+    - 1x
+
+shizen.tablet:
+  label: 'Tablet (lg)'
+  mediaQuery: 'all and (min-width: 1024px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+
+shizen.desktop:
+  label: 'Desktop (xl)'
+  mediaQuery: 'all and (min-width: 1280px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
