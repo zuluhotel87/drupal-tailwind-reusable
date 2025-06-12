@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.page
-    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.hero_section
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -22,16 +22,16 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      media_gallery: media_gallery
+      hero_section: hero_section
     negate: 0
     target_bundles_drag_drop:
-      aaaa:
-        weight: -5
+      cta:
+        weight: 4
+        enabled: false
+      hero_section:
+        weight: 5
         enabled: true
       media_gallery:
         weight: -7
-        enabled: true
-      zzzz:
-        weight: -6
-        enabled: true
+        enabled: false
 field_type: entity_reference_revisions

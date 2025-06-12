@@ -3,63 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.media_gallery.field_height
     - field.field.paragraph.media_gallery.field_media
-    - field.field.paragraph.media_gallery.field_responsive_image
-    - field.field.paragraph.media_gallery.field_width
     - paragraphs.paragraphs_type.media_gallery
   module:
-    - field_group
     - media_library
-third_party_settings:
-  field_group:
-    group_dimensions:
-      children:
-        - field_width
-        - field_height
-      label: Dimensions
-      region: content
-      parent_name: ''
-      weight: 2
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        label_as_html: false
-        description: 'Dimensions will maintain the aspect-ratio of the image. If only a single dimension is specified, the other dimension will be calculated.'
-        required_fields: true
 id: paragraph.media_gallery.default
 targetEntityType: paragraph
 bundle: media_gallery
 mode: default
 content:
-  field_height:
-    type: number
-    weight: 4
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
   field_media:
     type: media_library_widget
     weight: 1
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
-  field_responsive_image:
-    type: options_select
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_width:
-    type: number
-    weight: 3
-    region: content
-    settings:
-      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

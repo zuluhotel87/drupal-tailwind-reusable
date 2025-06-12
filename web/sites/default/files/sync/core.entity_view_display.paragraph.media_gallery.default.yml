@@ -3,10 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.media_gallery.field_height
     - field.field.paragraph.media_gallery.field_media
-    - field.field.paragraph.media_gallery.field_responsive_image
-    - field.field.paragraph.media_gallery.field_width
     - paragraphs.paragraphs_type.media_gallery
 id: paragraph.media_gallery.default
 targetEntityType: paragraph
@@ -22,7 +19,4 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden:
-  field_height: true
-  field_responsive_image: true
-  field_width: true
+hidden: {  }
