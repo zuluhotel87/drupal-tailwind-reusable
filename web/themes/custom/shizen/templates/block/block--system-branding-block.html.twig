@@ -19,12 +19,12 @@
 
     {{ link({
       label: link_content,
-      href: path('<front>'),
-      class: 'flex items-center space-x-3',
       gaCategory: 'brand-block',
-      attributes: {
+      attrs: {
+        class: 'flex items-center space-x-3',
+        href: path('<front>'),
         rel: 'home',
-      }
+      },
     }) }}
   {% endif %}
 

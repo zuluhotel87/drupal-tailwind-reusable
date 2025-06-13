@@ -1,12 +1,25 @@
 {% macro image(image_property, opts) %}
-  {% set default = opts.default ?? 'w-full h-full object-cover ' %}
-  {% set custom_class = opts.class is defined ? opts.class : 'rounded-md shadow-lg' %}
 
-  <div class="relative {{ opts.wrapper ?? 'h-full w-full' }}">
+  {% set default_classes = [
+    'w-full',
+    'h-full',
+    'object-cover',
+  ] %}
+
+  {# Merge class with default classes #}
+  {% set attrs = opts.attrs ?? {} %}
+  {% set attr_class = (attrs.class ?? '')|split(' ') %}
+  {% set classes = default_classes|merge(attr_class) %}
+  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+
+
+  {% set wrapper_class = opts.wrapper_class is defined ? opts.wrapper_class : 'rounded-md shadow-lg h-full w-full' %}
+
+  <div class="relative {{ opts.wrapper }}">
     {{ drupal_image(
       image_property,
       opts.style ?? 'medium',
-      {class: default ~ custom_class},
+      attrs,
     ) }}
   </div>
 {% endmacro image %}

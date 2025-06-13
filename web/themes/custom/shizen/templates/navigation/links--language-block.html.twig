@@ -5,13 +5,13 @@
     <li{{ item.attributes.addClass('block py-2 px-3 lg:p-0 rounded-sm hover:bg-muted-light lg:hover:bg-transparent lg:border-0') }}>
       {{ link({
         label: item.text,
-        href: item.attributes.hreflang != 'en' ? item.attributes.hreflang : '/',
-        class: 'language-link',
         gaCategory: 'language-switcher',
-        attributes: {
-          hreflang: item.attributes.hreflang,
+        attrs: {
+          class: 'language-link',
           data_drupal_link_system_path: '<front>',
-        }
+          href: item.attributes.hreflang != 'en' ? item.attributes.hreflang : '/',
+          hreflang: item.attributes.hreflang,
+        },
       }) }}
     </li>
   {% endfor %}

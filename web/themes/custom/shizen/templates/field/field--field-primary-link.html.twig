@@ -1,0 +1,20 @@
+{% from "@shizen/macros/ui/atoms/button/ui.button.html.twig" import button %}
+{% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+
+{% set item_content = items[0].content %}
+
+{% set btn_content %}
+  <div class="inline-flex items-center space-x-2 font-bold">
+    {{ item_content['#title'] }}
+    {{ icon('arrow-right-short') }}
+  </div>
+{% endset %}
+
+{{ button({
+  label: btn_content,
+  gaCategory: 'cta-primary',
+  size: element['#object'].field_size.value ?? null,
+  attrs: {
+    href: item_content['#url']|render
+  },
+}) }}

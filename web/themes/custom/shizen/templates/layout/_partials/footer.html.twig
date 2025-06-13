@@ -15,13 +15,17 @@
       <div class="flex justify-between items-center text-light-dark">
         <div>
           <span>© {{ 'now'|date('Y') ~ ' |' }}</span>
-          <span class="mx-1"> {{ link({
+          <span class="mx-1">
+            {{ link({
               label: site_name,
-              href: path('<front>'),
-              attributes: 'rel="home"',
-              class: 'hover:underline',
               gaCategory: 'copyright',
-            }) }}</span>
+              attrs: {
+                class: 'hover:underline',
+                href: path('<front>'),
+                rel: 'home',
+              },
+            }) }}
+          </span>
           <span>{{ '- ' ~ 'All Rights Reserved'|t }}.</span>
         </div>
 

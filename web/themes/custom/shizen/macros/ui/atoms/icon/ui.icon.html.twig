@@ -1,12 +1,20 @@
 {% macro icon(name, opts) %}
-  <span class="flex-shrink-0 {{ opts.class ?? '' }}">
+  {% set default_classes = [
+    'flex-shrink-0',
+  ] %}
+
+  {# Merge class with default classes #}
+  {% set attrs = opts.attrs ?? {} %}
+  {% set attr_class = (attrs.class ?? '')|split(' ') %}
+  {% set classes = default_classes|merge(attr_class) %}
+  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+
+  <span
+    {# Display the attributes #}
+    {% for name, value in attrs %}
+      {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
+    {% endfor %}
+  >
     {{ icon('bootstrap', name, opts) }}
   </span>
 {% endmacro icon %}
-
-{% macro iconLabel(icon, opts) %}
-  <div class="flex items-center gap-1">
-    {{ _self.icon(icon, opts) }}
-    <span {{ opts.labelClass ? 'class="' ~ opts.labelClass ~ '"' }}>{{ opts.label }}</span>
-  </div>
-{% endmacro iconLabel %}

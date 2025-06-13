@@ -1,15 +1,25 @@
 {% macro link(opts) %}
   {% from "@shizen/macros/ui/atoms/ga/ui.ga.html.twig" import ga_event %}
 
-  <a href="{{ opts.href | raw }}" {{ attributes }}
-     class="hover:text-primary-hover transition-colors duration-200 hover:no-underline {{ opts.class ?? '' }}"
-    {{ opts.ariaLabel ? 'aria-label="' ~ opts.ariaLabel ~ '"' }}
-    {%- if opts.attributes is defined %}
-      {%- for name, value in opts.attributes %}
-        {{- ' ' ~ name|replace({'_':'-'}) }}="{{ value }}"
-      {%- endfor %}
-    {%- endif %}
-    {{ ga_event('link-' ~ opts.gaCategory, 'click', opts.href) }}
+  {% set default_classes = [
+    'hover:text-primary-hover',
+    'transition-colors',
+    'duration-200',
+    'hover:no-underline'
+  ] %}
+
+  {# Merge class with default classes #}
+  {% set attrs = opts.attrs ?? {} %}
+  {% set attr_class = (attrs.class ?? '')|split(' ') %}
+  {% set classes = default_classes|merge(attr_class) %}
+  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+
+  <a
+    {# Display the attributes #}
+    {% for name, value in attrs %}
+      {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
+    {% endfor %}
+    {{ ga_event('link-' ~ opts.gaCategory, 'click', attrs.href ?? '#') }}
   >
     {{ opts.label }}
   </a>

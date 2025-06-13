@@ -1,0 +1,26 @@
+{% from "@shizen/macros/ui/molecules/container/ui.container.html.twig" import container %}
+
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% set paragraph_content %}
+  <div{{ attributes.addClass(classes) }}>
+      <div class="max-w-screen-xl lg:text-xl space-y-6">
+        {{ content }}
+      </div>
+  </div>
+{% endset %}
+
+{{ container({
+  alignment: 'center',
+  background: paragraph.field_layout_background.value,
+  height: paragraph.field_layout_height.value,
+  width: paragraph.field_layout_width.value,
+  content: paragraph_content,
+}) }}

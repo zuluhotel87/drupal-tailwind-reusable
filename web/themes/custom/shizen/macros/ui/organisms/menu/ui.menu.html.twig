@@ -32,12 +32,12 @@
         {% else %}
           {{ link({
             label: item.title,
-            href: item.url,
-            class: (item.in_active_trail ? 'nav-link-active' : 'nav-link') ~ (is_footer ? ' hover:underline' : ''),
             gaCategory: gaCategory,
-            attributes: {
-              role: 'menuitem'
-            }
+            attrs: {
+              class: (item.in_active_trail ? 'nav-link-active' : 'nav-link') ~ (is_footer ? ' hover:underline' : ''),
+              href: item.url,
+              role: 'menuitem',
+            },
           }) }}
         {% endif %}
       </li>

@@ -1,0 +1,23 @@
+uuid: 0c7ff297-f3fa-4826-95c8-6f710092df85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout_width
+    - paragraphs.paragraphs_type.hero_section
+  module:
+    - options
+id: paragraph.hero_section.field_layout_width
+field_name: field_layout_width
+entity_type: paragraph
+bundle: hero_section
+label: Width
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: wide
+default_value_callback: ''
+settings: {  }
+field_type: list_string

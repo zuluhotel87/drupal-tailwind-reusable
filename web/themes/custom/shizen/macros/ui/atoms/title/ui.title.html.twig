@@ -8,11 +8,23 @@
     h6: 'text-lg font-bold',
   } %}
 
-  {% set tag = opts.tag ?? 'h1' %}
-  {% set style = opts.style ?? tag %}
-  {% set class = 'not-italic' ~ ' ' ~ styles[style] ~ ' ' ~ (opts.class ?? '') %}
+  {% set heading = opts.heading ?? 'h1' %}
+  {% set style = opts.style ?? heading %}
+  {% set base_class = 'not-italic' ~ ' ' ~ styles[style] ~ ' ' ~ (opts.class ?? '') %}
 
-  <{{ tag }} class="{{ class }}">
+  {# Merge class with default classes #}
+  {% set attrs = opts.attrs ?? {} %}
+  {% set attr_class = (attrs.class ?? '')|split(' ') %}
+  {% set style_class = base_class|split(' ') %}
+  {% set classes = style_class|merge(attr_class) %}
+  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+
+  <{{ heading }}
+    {# Display the attributes #}
+    {% for name, value in attrs %}
+      {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
+    {% endfor %}
+  >
     {{ opts.label | raw }}
-  </{{ tag }}>
+  </{{ heading }}>
 {% endmacro title %}

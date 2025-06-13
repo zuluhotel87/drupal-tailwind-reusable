@@ -1,0 +1,6 @@
+{% from "@shizen/macros/ui/atoms/title/ui.title.html.twig" import title %}
+
+{{ title({
+  label: items[0].content['#context']['value'],
+  heading: element['#object'].field_heading.value ?? null,
+}) }}

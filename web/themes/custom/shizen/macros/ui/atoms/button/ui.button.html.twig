@@ -12,23 +12,31 @@
     'large': 'px-5 py-3 text-base'
   } %}
 
-  {% set isLink = opts.href is defined and opts.href is not empty %}
-  {% set tag = isLink ? 'a' : 'button' %}
-  {% set type = not isLink ? (opts.type ?? 'button') : 'a' %}
-  {% set style = opts.style ?? 'primary' %}
-  {% set size = opts.size ?? 'large' %}
+  {% set baseClass = 'inline-flex justify-center items-center text-center font-medium focus:ring-4 rounded-md focus:outline-none transition-colors duration-200' %}
+  {% set styleClass = styles[opts.style ?? 'primary'] %}
+  {% set sizeClass = sizes[opts.size ?? 'medium'] %}
 
-  {% set baseClass = 'text-center font-medium focus:ring-4 rounded-md focus:outline-none transition-colors duration-200' %}
-  {% set styleClass = styles[style] %}
-  {% set sizeClass = sizes[size] %}
+  {# Merge class with default classes #}
+  {% set attrs = opts.attrs ?? {} %}
+  {% set attr_class = (attrs.class ?? '')|split(' ') %}
+  {% set btn_class = (baseClass ~ ' ' ~ styleClass ~ ' ' ~ sizeClass)|split(' ') %}
+  {% set classes = btn_class|merge(attr_class) %}
+  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+
+  {% set isLink = attrs.href is defined %}
+  {% set tag = isLink ? 'a' : 'button' %}
+
+  {% if not isLink and attrs.type is not defined %}
+    {% set attrs = attrs|merge({'type': 'button'}) %}
+  {% endif %}
 
   <{{ tag }}
-    {% if type %}type="{{ type }}"{% endif %}
-    {% if isLink %}href="{{ opts.href }}"{% endif %}
-    class="{{ baseClass ~ ' ' ~ styleClass ~ ' ' ~ sizeClass ~ ' ' ~ (opts.class ?? '') }}"
-    {{ opts.ariaLabel ? 'aria-label="' ~ opts.ariaLabel ~ '"' }}
-    {{ ga_event('button-' ~ opts.gaCategory, 'click', isLink ? opts.href : opts.label) }}
+    {# Display the attributes #}
+    {% for name, value in attrs %}
+      {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
+    {% endfor %}
+    {{ ga_event('button-' ~ opts.gaCategory, 'click', isLink ? attrs.href : opts.label) }}
   >
-    {{ opts.label | raw }}
+    {{ opts.label }}
   </{{ tag }}>
 {% endmacro button %}

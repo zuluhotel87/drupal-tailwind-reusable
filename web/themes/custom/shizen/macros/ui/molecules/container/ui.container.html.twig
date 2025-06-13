@@ -1,0 +1,47 @@
+{% macro container(opts) %}
+  {% set alignments = {
+    left: 'flex justify-start',
+    center: 'flex justify-center text-center mx-auto',
+    right: 'flex justify-end',
+  } %}
+
+  {% set backgrounds = {
+    default: '',
+    light: 'bg-light',
+    dark: 'bg-muted',
+  } %}
+
+  {% set heights = {
+    small: 'py-16',
+    medium: 'py-32',
+    tall: 'py-48',
+  } %}
+
+  {% set widths = {
+    narrow: 'max-w-md',
+    wide: 'container',
+    fullscreen: 'w-full',
+  } %}
+
+  {% set container_classes = [
+    alignments[opts.alignment] is defined ? alignments[opts.alignment] : '',
+    backgrounds[opts.background] is defined ? backgrounds[opts.background] : '',
+    heights[opts.height] is defined ? heights[opts.height] : '',
+    widths[opts.width] is defined ? widths[opts.width] : ''
+  ] %}
+
+  {# Merge class with container_classes #}
+  {% set attrs = opts.attrs ?? {} %}
+  {% set attr_class = (attrs.class ?? '')|split(' ') %}
+  {% set classes = container_classes|merge(attr_class) %}
+  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+
+  <div
+    {# Display the attributes #}
+    {% for name, value in attrs %}
+      {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
+    {% endfor %}
+  >
+    {{ opts.content }}
+  </div>
+{% endmacro container %}

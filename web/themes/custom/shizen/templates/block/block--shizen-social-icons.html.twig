@@ -11,16 +11,16 @@
         {% endset %}
 
         {{ link({
-          href: item.link,
-          class: 'hover:text-light-dark-soft transition-colors duration-300',
           label: link_content,
-          ariaLabel: item.title,
           gaCategory: 'social-icon',
-          attributes: {
+          attrs: {
+            ariaLabel: item.title,
+            class: 'hover:text-light-dark-soft transition-colors duration-300',
+            href: item.link,
             rel: 'noopener',
             target: '_blank',
             title: item.title,
-          }
+          },
         }) }}
       </li>
     {% endfor %}

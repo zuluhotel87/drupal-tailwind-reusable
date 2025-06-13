@@ -1,11 +1,4 @@
 - flowbite theming? (https://flowbite.com/docs/customize/theming/)
-- paragraph
-  - make use of content
-    - width: full screen, wide, narrow
-    - theme dark - light - primary
-    - height
-    - header size
-    - etc
 - Webform (request a quote)
 - create an install script
   - ddev drush site:install standard --account-name=admin --account-pass=admin
@@ -13,12 +6,11 @@
 - blog
 - news
 - events
+- something that also post on facebook, instagram, twitter, or other
 
 paragraph
 
 - add support for css effects in paragraphs
-- can define image dimension in media gallery
-- simpleContent (reusable title, description, cta)
 - image with heading
 - newsletter (image, video, etc.)
 - social proof icons

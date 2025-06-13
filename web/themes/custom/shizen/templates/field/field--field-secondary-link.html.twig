@@ -1,0 +1,13 @@
+{% from "@shizen/macros/ui/atoms/button/ui.button.html.twig" import button %}
+
+{% set item_content = items[0].content %}
+
+{{ button({
+  label: item_content['#title'],
+  gaCategory: 'cta-secondary',
+  style: 'secondary',
+  size: element['#object'].field_size.value ?? null,
+  attrs: {
+    href: item_content['#url']|render
+  },
+}) }}

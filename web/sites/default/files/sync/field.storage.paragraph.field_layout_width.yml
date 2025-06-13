@@ -1,0 +1,30 @@
+uuid: 27a98494-efd7-44cc-bbcb-c92fea0ee287
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_layout_width
+field_name: field_layout_width
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: narrow
+      label: Narrow
+    -
+      value: wide
+      label: Wide
+    -
+      value: full_screen
+      label: 'Full Screen'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
