@@ -45,6 +45,7 @@
         "drush/drush": "^13.3"
     },
     "require-dev": {
+        "cweagans/composer-patches": "^1.7",
         "drupal/webprofiler": "^11.1",
         "phpunit/phpunit": "^10.5",
         "slevomat/coding-standard": "^8.19"
@@ -57,10 +58,11 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "phpstan/extension-installer": true,
+            "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "drupal/core-composer-scaffold": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         },
         "sort-packages": true
     },
@@ -101,6 +103,11 @@
             "recipes/{$name}": [
                 "type:drupal-recipe"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "Remove conflicting .hidden class to prevent conflict with Tailwind": "web/themes/custom/shizen/patches/remove-conflicting-hidden-class-to-prevent-conflict-with-tailwind.patch"
+            }
         }
     }
 }

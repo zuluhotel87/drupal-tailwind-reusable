@@ -1,16 +1,16 @@
-uuid: d9838962-4c48-4c24-9e48-959950a4c8d0
+uuid: 711dcc35-2bc9-47bc-8f72-b94dde267112
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_layout_height
-    - paragraphs.paragraphs_type.hero_section
+    - paragraphs.paragraphs_type.paragraph_layout
   module:
     - options
-id: paragraph.hero_section.field_layout_height
+id: paragraph.paragraph_layout.field_layout_height
 field_name: field_layout_height
 entity_type: paragraph
-bundle: hero_section
+bundle: paragraph_layout
 label: Height
 description: ''
 required: true

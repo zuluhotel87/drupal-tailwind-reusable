@@ -1,0 +1,28 @@
+uuid: 40823c4b-9da5-47b3-8d92-a25aed9e8180
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_layout.field_layout_background
+    - field.field.paragraph.paragraph_layout.field_layout_height
+    - paragraphs.paragraphs_type.paragraph_layout
+id: paragraph.paragraph_layout.default
+targetEntityType: paragraph
+bundle: paragraph_layout
+mode: default
+content:
+  field_layout_background:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_layout_height:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -17,7 +17,7 @@
   {% set attr_class = (attrs.class ?? '')|split(' ') %}
   {% set style_class = base_class|split(' ') %}
   {% set classes = style_class|merge(attr_class) %}
-  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+  {% set attrs = attrs|merge({class: classes|join(' ')}) %}
 
   <{{ heading }}
     {# Display the attributes #}

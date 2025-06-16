@@ -34,6 +34,7 @@
             label: item.title,
             gaCategory: gaCategory,
             attrs: {
+              aria_label: item.title,
               class: (item.in_active_trail ? 'nav-link-active' : 'nav-link') ~ (is_footer ? ' hover:underline' : ''),
               href: item.url,
               role: 'menuitem',

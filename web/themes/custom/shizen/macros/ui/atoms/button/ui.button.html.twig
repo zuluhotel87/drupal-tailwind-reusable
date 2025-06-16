@@ -21,13 +21,17 @@
   {% set attr_class = (attrs.class ?? '')|split(' ') %}
   {% set btn_class = (baseClass ~ ' ' ~ styleClass ~ ' ' ~ sizeClass)|split(' ') %}
   {% set classes = btn_class|merge(attr_class) %}
-  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+  {% set attrs = attrs|merge({class: classes|join(' ')}) %}
 
   {% set isLink = attrs.href is defined %}
   {% set tag = isLink ? 'a' : 'button' %}
 
   {% if not isLink and attrs.type is not defined %}
-    {% set attrs = attrs|merge({'type': 'button'}) %}
+    {% set attrs = attrs|merge({type: 'button'}) %}
+  {% endif %}
+
+  {% if attrs.aria_label is empty %}
+    {% set attrs = attrs|merge({aria_label: isLink ? 'Link' : 'Button'}) %}
   {% endif %}
 
   <{{ tag }}

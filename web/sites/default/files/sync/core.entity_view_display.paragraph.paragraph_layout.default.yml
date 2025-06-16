@@ -1,0 +1,16 @@
+uuid: ba4bc6ac-7eb8-4f6c-ba8e-aa020782ee22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_layout.field_layout_background
+    - field.field.paragraph.paragraph_layout.field_layout_height
+    - paragraphs.paragraphs_type.paragraph_layout
+id: paragraph.paragraph_layout.default
+targetEntityType: paragraph
+bundle: paragraph_layout
+mode: default
+content: {  }
+hidden:
+  field_layout_background: true
+  field_layout_height: true

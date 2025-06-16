@@ -1,25 +1,22 @@
-uuid: 27a98494-efd7-44cc-bbcb-c92fea0ee287
+uuid: 204f9409-4d3d-4be9-9a08-7d2c17dca7ff
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_layout_width
-field_name: field_layout_width
+id: paragraph.field_image_alignment
+field_name: field_image_alignment
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: narrow
-      label: Narrow
+      value: left
+      label: Left
     -
-      value: wide
-      label: Wide
-    -
-      value: full_screen
-      label: 'Full Screen'
+      value: right
+      label: Right
   allowed_values_function: ''
 module: options
 locked: false

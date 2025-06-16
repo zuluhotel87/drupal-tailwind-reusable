@@ -1,25 +1,33 @@
-{% macro image(image_property, opts) %}
-
+{% macro responsive_image(entity, responsive_image_id, opts) %}
   {% set default_classes = [
-    'w-full',
-    'h-full',
+    'max-w-full',
+    'h-auto',
     'object-cover',
+    'rounded-md',
+    'shadow-lg',
   ] %}
+
+  {% set uri = entity|file_uri %}
 
   {# Merge class with default classes #}
   {% set attrs = opts.attrs ?? {} %}
   {% set attr_class = (attrs.class ?? '')|split(' ') %}
   {% set classes = default_classes|merge(attr_class) %}
-  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+  {% set attrs = attrs|merge({class: classes|join(' ')}) %}
+  {% set attrs = attrs|merge({alt: entity.0.alt}) %}
 
+  {% if not attrs.loading %}
+    {% set attrs = attrs|merge({loading: 'lazy'}) %}
+  {% endif %}
 
-  {% set wrapper_class = opts.wrapper_class is defined ? opts.wrapper_class : 'rounded-md shadow-lg h-full w-full' %}
+  {% set image = {
+      '#theme': 'responsive_image',
+      '#responsive_image_style_id': responsive_image_id,
+      '#uri': uri,
+      '#attributes': attrs,
+    }
+  %}
 
-  <div class="relative {{ opts.wrapper }}">
-    {{ drupal_image(
-      image_property,
-      opts.style ?? 'medium',
-      attrs,
-    ) }}
-  </div>
-{% endmacro image %}
+  {{ image }}
+
+{% endmacro responsive_image %}

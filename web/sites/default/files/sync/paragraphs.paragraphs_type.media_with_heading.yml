@@ -1,0 +1,10 @@
+uuid: 4bd36864-64bb-4a0d-b74a-9c8ad6449bd0
+langcode: fr
+status: true
+dependencies: {  }
+id: media_with_heading
+label: 'Media with heading'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

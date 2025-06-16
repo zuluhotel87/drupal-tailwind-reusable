@@ -1,9 +1,9 @@
-uuid: 3c2c956d-db43-46aa-b474-d999533067af
+uuid: e8d7927b-a66f-44be-96a3-3acf1c130f0e
 langcode: en
 status: true
 dependencies: {  }
-id: title
-label: Title
+id: card_item
+label: 'Card Item'
 icon_uuid: null
 icon_default: null
 description: ''

@@ -1,0 +1,3 @@
+.centered .paragraph--type--cta {
+  @apply flex justify-center
+}

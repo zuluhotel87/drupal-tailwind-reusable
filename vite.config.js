@@ -1,6 +1,6 @@
 import { glob } from 'glob'
 import path from "path";
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from "vite";
 
 const THEME_PATH = './web/themes/custom/shizen';

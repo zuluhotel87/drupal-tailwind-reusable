@@ -25,7 +25,6 @@
 
   {% set container_classes = [
     alignments[opts.alignment] is defined ? alignments[opts.alignment] : '',
-    backgrounds[opts.background] is defined ? backgrounds[opts.background] : '',
     heights[opts.height] is defined ? heights[opts.height] : '',
     widths[opts.width] is defined ? widths[opts.width] : ''
   ] %}
@@ -34,14 +33,16 @@
   {% set attrs = opts.attrs ?? {} %}
   {% set attr_class = (attrs.class ?? '')|split(' ') %}
   {% set classes = container_classes|merge(attr_class) %}
-  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+  {% set attrs = attrs|merge({class: classes|join(' ')}) %}
 
-  <div
-    {# Display the attributes #}
-    {% for name, value in attrs %}
-      {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
-    {% endfor %}
-  >
-    {{ opts.content }}
+  <div class="w-full {{ backgrounds[opts.background] is defined ? backgrounds[opts.background] }}">
+      <div
+      {# Display the attributes #}
+      {% for name, value in attrs %}
+        {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
+      {% endfor %}
+      >
+      {{ opts.content }}
+    </div>
   </div>
 {% endmacro container %}

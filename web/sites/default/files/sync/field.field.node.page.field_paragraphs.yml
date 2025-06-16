@@ -5,7 +5,8 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.page
-    - paragraphs.paragraphs_type.hero_section
+    - paragraphs.paragraphs_type.cover_image_with_ctas
+    - paragraphs.paragraphs_type.media_with_heading
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -22,16 +23,32 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      hero_section: hero_section
+      cover_image_with_ctas: cover_image_with_ctas
+      media_with_heading: media_with_heading
     negate: 0
     target_bundles_drag_drop:
+      card_item:
+        weight: 9
+        enabled: false
+      cover_image_with_ctas:
+        weight: 10
+        enabled: true
       cta:
         weight: 4
         enabled: false
       hero_section:
         weight: 5
-        enabled: true
+        enabled: false
       media_gallery:
         weight: -7
+        enabled: false
+      media_with_heading:
+        weight: 10
+        enabled: true
+      paragraph_layout:
+        weight: 11
+        enabled: false
+      title:
+        weight: 9
         enabled: false
 field_type: entity_reference_revisions

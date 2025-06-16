@@ -8,10 +8,10 @@
     "dev": "vite"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.8",
+    "@tailwindcss/vite": "^4.1.10",
     "glob": "^11.0.2",
     "postcss": "^8.4.49",
-    "tailwindcss": "^4.1.8",
+    "tailwindcss": "^4.1.10",
     "vite": "^6.3.5"
   },
   "dependencies": {

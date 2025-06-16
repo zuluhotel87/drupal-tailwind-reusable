@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: media_gallery
-label: 'Media Gallery'
+label: 'Media gallery'
 icon_uuid: null
 icon_default: null
 description: ''

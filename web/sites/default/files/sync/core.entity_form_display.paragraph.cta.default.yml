@@ -8,7 +8,59 @@ dependencies:
     - field.field.paragraph.cta.field_size
     - paragraphs.paragraphs_type.cta
   module:
+    - field_group
     - link
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_layout
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_content:
+      children:
+        - field_primary_link
+        - field_secondary_link
+      label: Content
+      region: content
+      parent_name: group_tabs
+      weight: 6
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: false
+    group_layout:
+      children:
+        - field_size
+      label: Layout
+      region: content
+      parent_name: group_tabs
+      weight: 7
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: false
 id: paragraph.cta.default
 targetEntityType: paragraph
 bundle: cta

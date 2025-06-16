@@ -7,6 +7,7 @@
         label: item.text,
         gaCategory: 'language-switcher',
         attrs: {
+          aria_label: 'Swith site language'|t,
           class: 'language-link',
           data_drupal_link_system_path: '<front>',
           href: item.attributes.hreflang != 'en' ? item.attributes.hreflang : '/',

@@ -1,7 +1,11 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
 
 /* Import custom CSS files */
-@import "./base.css";
 @import "./theme.css";
+@import "./base.css";
 
 @import "./components/container.css";
+@import "./components/paragraph-cta.css";
+
+@source "./../../macros";
+@source "./../../templates";

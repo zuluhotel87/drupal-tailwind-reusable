@@ -1,16 +1,16 @@
-uuid: 4f2e7305-cf10-40f8-aed1-597b61ac6938
+uuid: 79831a7c-3398-4f0b-8506-4d22f157f0f1
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_heading
-    - paragraphs.paragraphs_type.title
+    - paragraphs.paragraphs_type.simple_header
   module:
     - options
-id: paragraph.title.field_heading
+id: paragraph.simple_header.field_heading
 field_name: field_heading
 entity_type: paragraph
-bundle: title
+bundle: simple_header
 label: Heading
 description: ''
 required: true

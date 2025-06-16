@@ -1,0 +1,46 @@
+uuid: 35171ffd-d9ec-401a-8084-1d2132022e68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_layout
+    - paragraphs.paragraphs_type.media_with_heading
+    - paragraphs.paragraphs_type.paragraph_layout
+  module:
+    - entity_reference_revisions
+id: paragraph.media_with_heading.field_paragraph_layout
+field_name: field_paragraph_layout
+entity_type: paragraph
+bundle: media_with_heading
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      paragraph_layout: paragraph_layout
+    negate: 0
+    target_bundles_drag_drop:
+      cta:
+        weight: 7
+        enabled: false
+      hero_section:
+        weight: 8
+        enabled: false
+      media_gallery:
+        weight: 9
+        enabled: false
+      media_with_heading:
+        weight: 10
+        enabled: false
+      paragraph_layout:
+        weight: 11
+        enabled: true
+      title:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,43 @@
+uuid: bbb77056-b05c-4653-8bd1-9f84430e0bc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cover_image_with_ctas.field_media
+    - field.field.paragraph.cover_image_with_ctas.field_paragraph
+    - field.field.paragraph.cover_image_with_ctas.field_paragraph_card_items
+    - paragraphs.paragraphs_type.cover_image_with_ctas
+  module:
+    - entity_reference_revisions
+id: paragraph.cover_image_with_ctas.default
+targetEntityType: paragraph
+bundle: cover_image_with_ctas
+mode: default
+content:
+  field_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_paragraph_card_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

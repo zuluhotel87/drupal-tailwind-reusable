@@ -1,16 +1,16 @@
-uuid: 046153f7-8690-43d2-84ee-ee820489a68d
+uuid: 53b06cc1-e6a8-4156-8a8e-fd0e6b8fe075
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_description
-    - paragraphs.paragraphs_type.hero_section
+    - paragraphs.paragraphs_type.card_item
   module:
     - text
-id: paragraph.hero_section.field_description
+id: paragraph.card_item.field_description
 field_name: field_description
 entity_type: paragraph
-bundle: hero_section
+bundle: card_item
 label: Description
 description: ''
 required: false

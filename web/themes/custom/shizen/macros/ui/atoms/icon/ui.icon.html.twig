@@ -7,7 +7,12 @@
   {% set attrs = opts.attrs ?? {} %}
   {% set attr_class = (attrs.class ?? '')|split(' ') %}
   {% set classes = default_classes|merge(attr_class) %}
-  {% set attrs = attrs|merge({'class': classes|join(' ')}) %}
+  {% set attrs = attrs|merge({class: classes|join(' ')}) %}
+
+  {% if attrs.aria_label is empty %}
+    {% set attrs = attrs|merge({aria_hidden: 'true'}) %}
+    {% set attrs = attrs|merge({role: 'presentation'}) %}
+  {% endif %}
 
   <span
     {# Display the attributes #}

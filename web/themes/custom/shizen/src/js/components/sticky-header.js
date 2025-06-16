@@ -15,7 +15,6 @@
           const scrolled = window.scrollY > 10;
           container.classList.toggle('py-10', !scrolled);
           container.classList.toggle('py-2', scrolled);
-          header.classList.toggle('shadow-md', scrolled);
         };
 
         // Restore scroll position if available

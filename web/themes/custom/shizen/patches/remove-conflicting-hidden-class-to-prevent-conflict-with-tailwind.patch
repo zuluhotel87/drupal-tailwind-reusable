@@ -1,0 +1,22 @@
+diff --git a/core/modules/system/css/components/hidden.module.css b/core/modules/system/css/components/hidden.module.css
+--- a/core/modules/system/css/components/hidden.module.css
++++ b/core/modules/system/css/components/hidden.module.css	(date 1750040167647)
+@@ -3,18 +3,6 @@
+  * Utility classes to hide elements in different ways.
+  */
+
+-/**
+- * Hide elements from all users.
+- *
+- * Used for elements which should not be immediately displayed to any user. An
+- * example would be collapsible details that will be expanded with a click
+- * from a user. The effect of this class can be toggled with the jQuery show()
+- * and hide() functions.
+- */
+-.hidden {
+-  display: none;
+-}
+-
+ /**
+  * Hide elements visually, but keep them available for screen readers.
+  *

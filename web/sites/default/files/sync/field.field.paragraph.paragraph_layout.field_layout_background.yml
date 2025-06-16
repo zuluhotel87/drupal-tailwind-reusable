@@ -1,16 +1,16 @@
-uuid: 2039d684-0b2b-4501-a8ac-9b9f693d9683
+uuid: e1017ea9-1a10-469b-ba9c-9c9023c5da93
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_layout_background
-    - paragraphs.paragraphs_type.hero_section
+    - paragraphs.paragraphs_type.paragraph_layout
   module:
     - options
-id: paragraph.hero_section.field_layout_background
+id: paragraph.paragraph_layout.field_layout_background
 field_name: field_layout_background
 entity_type: paragraph
-bundle: hero_section
+bundle: paragraph_layout
 label: Background
 description: ''
 required: true

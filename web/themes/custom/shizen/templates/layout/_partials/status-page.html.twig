@@ -21,7 +21,10 @@
         label: 'Homepage'|trans,
         buttonStyle: 'primary',
         buttonSize: 'large',
-        href: path('<front>'),
+        attrs: {
+          href: path('<front>'),
+          label: 'Homepage'|trans,
+        },
       }) }}
     </div>
   {% endif %}
