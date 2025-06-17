@@ -6,6 +6,7 @@
 
 @import "./components/container.css";
 @import "./components/paragraph-cta.css";
+@import "./components/paragraph-cover-image-with-ctas.css";
 
 @source "./../../macros";
 @source "./../../templates";

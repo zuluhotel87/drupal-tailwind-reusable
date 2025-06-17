@@ -1,0 +1,33 @@
+uuid: f69d79e2-d3d5-40e9-a135-71ef4dd6114a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.background_cover_image_with_ctas.field_media
+    - field.field.paragraph.background_cover_image_with_ctas.field_paragraph_hero_section
+    - paragraphs.paragraphs_type.background_cover_image_with_ctas
+  module:
+    - entity_reference_revisions
+id: paragraph.background_cover_image_with_ctas.default
+targetEntityType: paragraph
+bundle: background_cover_image_with_ctas
+mode: default
+content:
+  field_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragraph_hero_section:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

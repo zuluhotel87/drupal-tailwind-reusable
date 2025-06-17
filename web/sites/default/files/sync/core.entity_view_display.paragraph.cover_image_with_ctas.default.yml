@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.cover_image_with_ctas.field_image_alignment
     - field.field.paragraph.cover_image_with_ctas.field_media
     - field.field.paragraph.cover_image_with_ctas.field_paragraph
     - field.field.paragraph.cover_image_with_ctas.field_paragraph_card_items
+    - field.field.paragraph.cover_image_with_ctas.field_paragraph_layout
     - paragraphs.paragraphs_type.cover_image_with_ctas
   module:
     - entity_reference_revisions
@@ -14,14 +16,6 @@ targetEntityType: paragraph
 bundle: cover_image_with_ctas
 mode: default
 content:
-  field_media:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_paragraph:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -38,6 +32,9 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
-hidden: {  }
+hidden:
+  field_image_alignment: true
+  field_media: true
+  field_paragraph_layout: true

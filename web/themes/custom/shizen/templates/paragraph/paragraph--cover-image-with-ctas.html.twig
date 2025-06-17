@@ -1,15 +1,47 @@
+{% from "@shizen/macros/ui/atoms/image/ui.image.html.twig" import responsive_image %}
+{% from "@shizen/macros/ui/molecules/container/ui.container.html.twig" import container %}
+
 {%
   set classes = [
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
-]
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
 %}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+
+{% set has_media = paragraph.field_media.entity.field_media_image[0] is defined %}
+{% set media_alignment = paragraph.field_image_alignment.value %}
+
+{% set paragraph_content %}
+  {% block paragraph %}
+    <div{{ attributes.addClass(classes) }}>
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        {% if has_media %}
+          {% set  media = paragraph.field_media.entity.field_media_image[0] %}
+
+          <div class="hidden lg:block lg:col-span-4 {{ media_alignment == 'right' ? 'lg:order-2' }}">
+            {{ responsive_image(media, 'content_1_1') }}
+          </div>
+          <div class="lg:col-span-8 space-y-10 {{ media_alignment == 'right' ? 'lg:order-1' }}">
+            {{ content }}
+          </div>
+        {% else %}
+          <div class="lg:col-span-12 text-center centered space-y-10">
+            {{ content }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock paragraph %}
+{% endset %}
+
+{% set layout_paragraph = paragraph.field_paragraph_layout.entity %}
+
+{{ container({
+  background: layout_paragraph.field_layout_background.value,
+  height: layout_paragraph.field_layout_height.value,
+  width: 'wide',
+  content: paragraph_content,
+}) }}
+

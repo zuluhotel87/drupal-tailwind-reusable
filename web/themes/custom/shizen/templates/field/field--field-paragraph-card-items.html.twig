@@ -1,0 +1,18 @@
+{% from "@shizen/macros/ui/organisms/card/ui.card.html.twig" import card_item %}
+
+<div{{ attributes }}>
+  <div class="space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
+    {% for item in items %}
+      {% set paragraph = item.content['#paragraph'] %}
+
+      <div{{ item.attributes }}>
+        {{ card_item({
+          icon: paragraph.field_icon.target_id,
+          title: paragraph.field_title.value,
+          description: paragraph.field_description.value,
+          ctas: paragraph.field_paragraph_cta[0].entity,
+        }) }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

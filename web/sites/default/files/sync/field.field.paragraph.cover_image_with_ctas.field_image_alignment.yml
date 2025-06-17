@@ -1,0 +1,23 @@
+uuid: cd864577-0d3c-4fbd-b896-3e51dde15766
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_alignment
+    - paragraphs.paragraphs_type.cover_image_with_ctas
+  module:
+    - options
+id: paragraph.cover_image_with_ctas.field_image_alignment
+field_name: field_image_alignment
+entity_type: paragraph
+bundle: cover_image_with_ctas
+label: Alignment
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

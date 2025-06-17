@@ -1,0 +1,19 @@
+{% macro card_item(opts) %}
+  {% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+  {% from "@shizen/macros/ui/atoms/title/ui.title.html.twig" import title %}
+
+  <div class="space-y-3">
+    <div class="block">
+      {{ icon(opts.icon) }}
+    </div>
+
+    {{ title({
+      label: opts.title,
+      heading: 'h3',
+    }) }}
+
+    {{ opts.description|raw }}
+
+    {{ opts.ctas|view }}
+  </div>
+{% endmacro %}

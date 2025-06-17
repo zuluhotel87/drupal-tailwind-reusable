@@ -14,12 +14,16 @@
     {% set attrs = attrs|merge({role: 'presentation'}) %}
   {% endif %}
 
+  {% set parts = name|split(':') %}
+  {% set icon_set = parts[1] is defined ? parts[0] : 'bootstrap' %}
+  {% set icon_name = parts[1] is defined ? parts[1] : parts[0] %}
+
   <span
     {# Display the attributes #}
     {% for name, value in attrs %}
       {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
     {% endfor %}
   >
-    {{ icon('bootstrap', name, opts) }}
+    {{ icon(icon_set, icon_name, opts) }}
   </span>
 {% endmacro icon %}
