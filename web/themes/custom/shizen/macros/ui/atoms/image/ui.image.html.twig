@@ -1,10 +1,7 @@
 {% macro responsive_image(entity, responsive_image_id, opts) %}
   {% set default_classes = [
-    'max-w-full',
-    'h-auto',
+    'w-full',
     'object-cover',
-    'rounded-md',
-    'shadow-lg',
   ] %}
 
   {% set uri = entity|file_uri %}
@@ -20,6 +17,10 @@
     {% set attrs = attrs|merge({loading: 'lazy'}) %}
   {% endif %}
 
+  {% if 'h-auto' not in attr_class and 'h-full' not in attr_class %}
+    {% set attrs = attrs|merge({class: 'h-auto'}) %}
+  {% endif %}
+
   {% set image = {
       '#theme': 'responsive_image',
       '#responsive_image_style_id': responsive_image_id,
@@ -28,6 +29,12 @@
     }
   %}
 
-  {{ image }}
+  <div class="relative rounded-md overflow-hidden">
+    {% if opts.has_skeleton is not defined or opts.has_skeleton %}
+      <div class="skeleton-overlay absolute inset-0 bg-muted-light animate-pulse pointer-events-none rounded-md z-10"></div>
+    {% endif %}
+
+    {{ image }}
+  </div>
 
 {% endmacro responsive_image %}

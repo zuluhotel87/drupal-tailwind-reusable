@@ -1,3 +1,7 @@
-.paragraph--type--cta .centered .paragraph--type--cta {
+.text-center .paragraph--type--cta {
   @apply flex justify-center
+}
+
+.text-right .paragraph--type--cta {
+  @apply flex justify-end
 }

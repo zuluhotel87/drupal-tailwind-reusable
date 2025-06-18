@@ -3,27 +3,106 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.background_cover_image_with_ctas.field_content_alignment
     - field.field.paragraph.background_cover_image_with_ctas.field_media
     - field.field.paragraph.background_cover_image_with_ctas.field_paragraph_hero_section
+    - field.field.paragraph.background_cover_image_with_ctas.field_paragraph_layout
     - paragraphs.paragraphs_type.background_cover_image_with_ctas
   module:
+    - field_group
     - media_library
     - paragraphs
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_layout
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_content:
+      children:
+        - field_media
+        - field_paragraph_hero_section
+      label: Content
+      region: content
+      parent_name: group_tabs
+      weight: 4
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: false
+    group_layout:
+      children:
+        - field_paragraph_layout
+        - field_content_alignment
+      label: Layout
+      region: content
+      parent_name: group_tabs
+      weight: 5
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: false
 id: paragraph.background_cover_image_with_ctas.default
 targetEntityType: paragraph
 bundle: background_cover_image_with_ctas
 mode: default
 content:
+  field_content_alignment:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_media:
     type: media_library_widget
-    weight: 1
+    weight: 2
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_paragraph_hero_section:
     type: paragraphs
-    weight: 1
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_paragraph_layout:
+    type: paragraphs
+    weight: 2
     region: content
     settings:
       title: Paragraph

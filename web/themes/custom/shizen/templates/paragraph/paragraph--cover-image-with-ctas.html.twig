@@ -18,7 +18,7 @@
     <div{{ attributes.addClass(classes) }}>
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         {% if has_media %}
-          {% set  media = paragraph.field_media.entity.field_media_image[0] %}
+          {% set media = paragraph.field_media.entity.field_media_image[0] %}
 
           <div class="hidden lg:block lg:col-span-4 {{ media_alignment == 'right' ? 'lg:order-2' }}">
             {{ responsive_image(media, 'content_1_1') }}
@@ -27,7 +27,7 @@
             {{ content }}
           </div>
         {% else %}
-          <div class="lg:col-span-12 text-center centered space-y-10">
+          <div class="lg:col-span-12 text-center space-y-10">
             {{ content }}
           </div>
         {% endif %}

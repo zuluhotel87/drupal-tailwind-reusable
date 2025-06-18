@@ -1,3 +1,6 @@
+{% from "@shizen/macros/ui/atoms/image/ui.image.html.twig" import responsive_image %}
+{% from "@shizen/macros/ui/molecules/container/ui.container.html.twig" import container %}
+
 {%
   set classes = [
     'paragraph',
@@ -7,10 +10,35 @@
   ]
 %}
 
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% set has_media = paragraph.field_media.entity.field_media_image[0] is defined %}
+
+{% set paragraph_content %}
+  {% block paragraph %}
+    <div{{ attributes.addClass(classes) }}>
+      {% block content %}
+        <div class="relative overflow-hidden rounded-md">
+          {% if has_media %}
+            <div class="absolute inset-0 bg-cover bg-center"
+                 style="background-image: url({{ paragraph.field_media.entity.field_media_image[0]|file_url }});"
+            ></div>
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+          {% endif %}
+
+          <div class="relative text-light py-16 px-8 lg:p-32">
+            {{ content.field_paragraph_hero_section }}
+          </div>
+        </div>
+      {% endblock %}
+    </div>
+  {% endblock paragraph %}
+{% endset %}
+
+{% set layout_paragraph = paragraph.field_paragraph_layout.entity %}
+
+{{ container({
+  alignment: paragraph.field_content_alignment.value,
+  background: layout_paragraph.field_layout_background.value,
+  height: layout_paragraph.field_layout_height.value,
+  width: 'wide',
+  content: paragraph_content,
+}) }}

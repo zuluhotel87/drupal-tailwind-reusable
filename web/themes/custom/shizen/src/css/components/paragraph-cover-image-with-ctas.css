@@ -1,4 +1,3 @@
-.paragraph--type--cover-image-with-ctas .centered .block {
-  display: flex;
-  justify-content: center;
+.paragraph--type--cover-image-with-ctas .text-center .block {
+  @apply flex justify-center
 }

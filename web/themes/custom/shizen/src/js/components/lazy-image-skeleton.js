@@ -2,17 +2,16 @@
   Drupal.behaviors.lazyImageSkeleton = {
     attach(context) {
       once('lazy-image', 'img[loading="lazy"]', context).forEach((img) => {
-        const wrapper = img.closest('.relative');
+        const container = img.closest('.relative');
+        const overlay = container?.querySelector('.skeleton-overlay');
 
         function onLoad() {
-          wrapper?.querySelector('.skeleton-loader')?.remove();
+          overlay?.remove();
           img.classList.remove('invisible');
         }
 
-        // Hide initially
         img.classList.add('invisible');
 
-        // Already loaded
         if (img.complete) {
           onLoad();
         } else {

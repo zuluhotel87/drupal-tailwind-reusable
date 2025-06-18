@@ -1,0 +1,23 @@
+uuid: 89d7ff04-dab7-41d8-a805-f24e1c9e85c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_alignment
+    - paragraphs.paragraphs_type.background_cover_image_with_ctas
+  module:
+    - options
+id: paragraph.background_cover_image_with_ctas.field_content_alignment
+field_name: field_content_alignment
+entity_type: paragraph
+bundle: background_cover_image_with_ctas
+label: 'Content Alignment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string
