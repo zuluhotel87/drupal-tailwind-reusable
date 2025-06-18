@@ -1,4 +1,4 @@
-uuid: 36981f4a-4695-4410-8b58-657e80e40f48
+uuid: f22a4f96-7c25-453f-89ad-d737756aa00e
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - media.type.video
-    - paragraphs.paragraphs_type.media_gallery
-id: paragraph.media_gallery.field_media
+    - paragraphs.paragraphs_type.media_embed_with_cta
+id: paragraph.media_embed_with_cta.field_media
 field_name: field_media
 entity_type: paragraph
-bundle: media_gallery
+bundle: media_embed_with_cta
 label: Media
 description: ''
 required: false
@@ -23,8 +23,8 @@ settings:
   handler_settings:
     target_bundles:
       image: image
-      video: video
       remote_video: remote_video
+      video: video
     sort:
       field: _none
       direction: ASC

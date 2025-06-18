@@ -9,16 +9,16 @@
   {# Merge class with default classes #}
   {% set attrs = opts.attrs ?? {} %}
   {% set attr_class = (attrs.class ?? '')|split(' ') %}
+  {% if 'h-' not in attrs.class %}
+    {% set attr_class = attr_class|merge(['h-auto']) %}
+  {% endif %}
+
   {% set classes = default_classes|merge(attr_class) %}
   {% set attrs = attrs|merge({class: classes|join(' ')}) %}
   {% set attrs = attrs|merge({alt: entity.0.alt}) %}
 
   {% if not attrs.loading %}
     {% set attrs = attrs|merge({loading: 'lazy'}) %}
-  {% endif %}
-
-  {% if 'h-auto' not in attr_class and 'h-full' not in attr_class %}
-    {% set attrs = attrs|merge({class: 'h-auto'}) %}
   {% endif %}
 
   {% set image = {

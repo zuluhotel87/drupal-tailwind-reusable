@@ -1,0 +1,12 @@
+{% macro media(content, opts) %}
+  {% from "@shizen/macros/ui/atoms/image/ui.image.html.twig" import responsive_image %}
+
+  {% set media_entity = content.0['#media'] %}
+  {% set media_type = media_entity.bundle.target_id %}
+
+  {% if media_type == 'image' %}
+    {{ responsive_image(media_entity, opts.responsive_image_id, opts) }}
+  {% else %}
+    {{ content }}
+  {% endif %}
+{% endmacro media %}

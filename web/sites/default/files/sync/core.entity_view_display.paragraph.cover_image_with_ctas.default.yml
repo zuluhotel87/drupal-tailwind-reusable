@@ -16,6 +16,15 @@ targetEntityType: paragraph
 bundle: cover_image_with_ctas
 mode: default
 content:
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_paragraph:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -36,5 +45,4 @@ content:
     region: content
 hidden:
   field_image_alignment: true
-  field_media: true
   field_paragraph_layout: true

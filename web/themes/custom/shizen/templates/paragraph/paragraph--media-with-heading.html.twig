@@ -1,5 +1,5 @@
-{% from "@shizen/macros/ui/atoms/image/ui.image.html.twig" import responsive_image %}
 {% from "@shizen/macros/ui/molecules/container/ui.container.html.twig" import container %}
+{% from "@shizen/macros/ui/atoms/media/ui.media.html.twig" import media %}
 
 {%
   set classes = [
@@ -10,27 +10,24 @@
   ]
 %}
 
-{% set has_media = content.field_media[0]['#media'].field_media_image is defined %}
+{% set media = content.field_media[0]['#media'].field_media_image ?? null %}
 {% set media_alignment = paragraph.field_image_alignment.value %}
 
 {% set paragraph_content %}
   {% block paragraph %}
     <div{{ attributes.addClass(classes) }}>
       <div class="grid lg:grid-cols-12 gap-10 items-center">
-        {% if has_media %}
-          {% set media = content.field_media[0]['#media'].field_media_image %}
-
+        {% if media %}
           <div class="hidden lg:block lg:col-span-5 {{ media_alignment == 'right' ? 'lg:order-2' }}">
-            {{ responsive_image(media, 'content_1_1') }}
-          </div>
-          <div class="lg:col-span-7 {{ media_alignment == 'right' ? 'lg:order-1' }}">
-            {{ content.field_paragraph_hero_section }}
-          </div>
-        {% else %}
-          <div class="lg:col-span-12 text-center">
-            {{ content.field_paragraph_hero_section }}
+            {{ media(content.field_media, {
+              responsive_image_id: 'content_1_1',
+            }) }}
           </div>
         {% endif %}
+
+        <div class="{{ media ? 'lg:col-span-7' : 'lg:col-span-12 text-center' }}">
+          {{ content|without('field_media') }}
+        </div>
       </div>
     </div>
   {% endblock paragraph %}

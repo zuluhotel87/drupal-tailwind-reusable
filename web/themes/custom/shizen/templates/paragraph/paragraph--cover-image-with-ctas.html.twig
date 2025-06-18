@@ -10,25 +10,23 @@
   ]
 %}
 
-{% set has_media = paragraph.field_media.entity.field_media_image[0] is defined %}
+{% set media = content.field_media[0]['#media'].field_media_image ?? null %}
 {% set media_alignment = paragraph.field_image_alignment.value %}
 
 {% set paragraph_content %}
   {% block paragraph %}
     <div{{ attributes.addClass(classes) }}>
       <div class="grid lg:grid-cols-12 gap-10 items-center">
-        {% if has_media %}
-          {% set media = paragraph.field_media.entity.field_media_image[0] %}
-
+        {% if media %}
           <div class="hidden lg:block lg:col-span-4 {{ media_alignment == 'right' ? 'lg:order-2' }}">
             {{ responsive_image(media, 'content_1_1') }}
           </div>
           <div class="lg:col-span-8 space-y-10 {{ media_alignment == 'right' ? 'lg:order-1' }}">
-            {{ content }}
+            {{ content|without('field_media') }}
           </div>
         {% else %}
           <div class="lg:col-span-12 text-center space-y-10">
-            {{ content }}
+            {{ content|without('field_media') }}
           </div>
         {% endif %}
       </div>

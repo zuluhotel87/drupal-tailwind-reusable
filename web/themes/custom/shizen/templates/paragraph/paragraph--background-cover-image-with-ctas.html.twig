@@ -10,22 +10,22 @@
   ]
 %}
 
-{% set has_media = paragraph.field_media.entity.field_media_image[0] is defined %}
+{% set media = content.field_media[0]['#media'].field_media_image ?? null %}
 
 {% set paragraph_content %}
   {% block paragraph %}
     <div{{ attributes.addClass(classes) }}>
       {% block content %}
         <div class="relative overflow-hidden rounded-md">
-          {% if has_media %}
+          {% if media %}
             <div class="absolute inset-0 bg-cover bg-center"
-                 style="background-image: url({{ paragraph.field_media.entity.field_media_image[0]|file_url }});"
+                 style="background-image: url({{ content.field_media[0]['#media'].field_media_image|file_url }});"
             ></div>
             <div class="absolute inset-0 bg-black opacity-50"></div>
           {% endif %}
 
-          <div class="relative text-light py-16 px-8 lg:p-32">
-            {{ content.field_paragraph_hero_section }}
+          <div class="relative py-16 px-8 lg:p-32 {{ media ? 'text-light' }}">
+            {{ content|without('field_media') }}
           </div>
         </div>
       {% endblock %}

@@ -1,5 +1,5 @@
-{% from "@shizen/macros/ui/atoms/image/ui.image.html.twig" import responsive_image %}
 {% from "@shizen/macros/ui/molecules/container/ui.container.html.twig" import container %}
+{% from "@shizen/macros/ui/atoms/media/ui.media.html.twig" import media %}
 
 {%
   set classes = [
@@ -14,7 +14,16 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="lg:text-xl space-y-10 lg:space-y-20">
-        {{ content }}
+        {{ content|without('field_media') }}
+
+        <div class="flex justify-center">
+          {{ media(content.field_media, {
+            responsive_image_id: 'content_1_1',
+            attrs: {
+              class: 'max-w-[640px] max-h-[480px]',
+            },
+          }) }}
+        </div>
       </div>
     {% endblock %}
   </div>
