@@ -1,0 +1,10 @@
+uuid: 3bbf0b10-1c07-4b46-a5be-35b8104a88e9
+langcode: en
+status: true
+dependencies: {  }
+id: media_embed_with_cta
+label: 'Media embed with CTA'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

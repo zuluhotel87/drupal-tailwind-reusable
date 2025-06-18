@@ -1,0 +1,3 @@
+.text-center iframe[class^="media-"] {
+  @apply flex justify-center mx-auto;
+}

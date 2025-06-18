@@ -1,0 +1,36 @@
+uuid: 10aa1c61-74c9-48ab-9aad-8edf49124f01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_embed_with_cta.field_paragraph_hero_section
+    - field.field.paragraph.media_embed_with_cta.field_paragraph_layout
+    - field.field.paragraph.media_embed_with_cta.field_paragraph_media_gallery
+    - paragraphs.paragraphs_type.media_embed_with_cta
+  module:
+    - entity_reference_revisions
+id: paragraph.media_embed_with_cta.default
+targetEntityType: paragraph
+bundle: media_embed_with_cta
+mode: default
+content:
+  field_paragraph_hero_section:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_paragraph_media_gallery:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_paragraph_layout: true

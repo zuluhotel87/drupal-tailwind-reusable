@@ -1,0 +1,31 @@
+{% from "@shizen/macros/ui/atoms/image/ui.image.html.twig" import responsive_image %}
+{% from "@shizen/macros/ui/molecules/container/ui.container.html.twig" import container %}
+
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% set paragraph_content %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="lg:text-xl space-y-10 lg:space-y-20">
+        {{ content }}
+      </div>
+    {% endblock %}
+  </div>
+{% endset %}
+
+{% set layout_paragraph = paragraph.field_paragraph_layout.entity %}
+
+{{ container({
+  alignment: 'center',
+  background: layout_paragraph.field_layout_background.value,
+  height: layout_paragraph.field_layout_height.value,
+  width: 'wide',
+  content: paragraph_content,
+}) }}
