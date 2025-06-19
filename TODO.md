@@ -5,5 +5,11 @@
   - ddev drush deploy -y
 - blog
 - news
+- newsletter
+- carousel
 - events
 - something that also post on facebook, instagram, twitter, or other
+- sign up form with CTA (any webforms ofc)
+
+
+- svg-cards

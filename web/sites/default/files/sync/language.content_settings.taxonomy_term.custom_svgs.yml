@@ -1,0 +1,11 @@
+uuid: 001cae55-e92b-4c56-9064-2bbc3dcd03a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.custom_svgs
+id: taxonomy_term.custom_svgs
+target_entity_type_id: taxonomy_term
+target_bundle: custom_svgs
+default_langcode: site_default
+language_alterable: false

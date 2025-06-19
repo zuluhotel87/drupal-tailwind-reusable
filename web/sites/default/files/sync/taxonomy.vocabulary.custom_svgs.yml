@@ -1,0 +1,9 @@
+uuid: eab1b174-0008-477d-918c-1df0bfd5d2b2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Custom SVGs'
+vid: custom_svgs
+description: 'Defines custom svg entries'
+weight: 0
+new_revision: false

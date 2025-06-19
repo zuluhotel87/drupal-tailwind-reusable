@@ -1,0 +1,36 @@
+uuid: f55bf609-23c9-4095-b3f6-13fae6d9ec91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.svg_card_item.field_custom_svg
+    - field.field.paragraph.svg_card_item.field_url
+    - paragraphs.paragraphs_type.svg_card_item
+  module:
+    - link
+id: paragraph.svg_card_item.default
+targetEntityType: paragraph
+bundle: svg_card_item
+mode: default
+content:
+  field_custom_svg:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_url:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,29 @@
+uuid: ed6a217f-8f15-49ae-a4a4-7ad0a002009f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_custom_svg
+    - paragraphs.paragraphs_type.svg_card_item
+    - taxonomy.vocabulary.custom_svgs
+id: paragraph.svg_card_item.field_custom_svg
+field_name: field_custom_svg
+entity_type: paragraph
+bundle: svg_card_item
+label: 'Custom SVG'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      custom_svgs: custom_svgs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

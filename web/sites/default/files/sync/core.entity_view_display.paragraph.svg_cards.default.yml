@@ -1,0 +1,36 @@
+uuid: 32018f3a-0c35-4f9a-82f8-f96ed96c6c42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.svg_cards.field_paragraph
+    - field.field.paragraph.svg_cards.field_paragraph_layout
+    - field.field.paragraph.svg_cards.field_paragraphs
+    - paragraphs.paragraphs_type.svg_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.svg_cards.default
+targetEntityType: paragraph
+bundle: svg_cards
+mode: default
+content:
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_paragraph_layout: true

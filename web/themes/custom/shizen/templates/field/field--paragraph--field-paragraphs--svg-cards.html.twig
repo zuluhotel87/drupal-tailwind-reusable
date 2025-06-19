@@ -1,0 +1,21 @@
+{% from "@shizen/macros/ui/atoms/link/ui.link.html.twig" import link %}
+{% from "@shizen/macros/ui/atoms/image/ui.svg.html.twig" import svg %}
+
+<div{{ attributes.addClass('flex flex-wrap justify-center items-center justify-between gap-10') }}>
+  {% for item in items %}
+    {% set uri = item.content['#paragraph'].field_url.value[0].uri %}
+    {% set svg_content = svg(item.content['#paragraph'].field_custom_svg.entity.description.value) %}
+
+    {% if uri %}
+      {{ link({
+        gaCategory: 'svg',
+        label: svg_content,
+        attrs: {
+          href: item.content['#paragraph'].field_url.value[0].uri,
+        },
+      }) }}
+    {% else %}
+      {{ svg_content }}
+    {% endif %}
+  {% endfor %}
+</div>

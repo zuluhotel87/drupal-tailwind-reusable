@@ -1,0 +1,67 @@
+uuid: aa24a8a0-39cb-42e5-9db4-2d3626b50204
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.svg_card_item
+    - paragraphs.paragraphs_type.svg_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.svg_cards.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: svg_cards
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      svg_card_item: svg_card_item
+    negate: 0
+    target_bundles_drag_drop:
+      background_cover_image_with_ctas:
+        weight: 12
+        enabled: false
+      background_image_cards:
+        weight: 13
+        enabled: false
+      card_item:
+        weight: 14
+        enabled: false
+      cover_image_with_ctas:
+        weight: 15
+        enabled: false
+      cta:
+        weight: 16
+        enabled: false
+      hero_section:
+        weight: 17
+        enabled: false
+      image_card_item:
+        weight: 18
+        enabled: false
+      media_embed_with_cta:
+        weight: 19
+        enabled: false
+      media_with_heading:
+        weight: 20
+        enabled: false
+      paragraph_layout:
+        weight: 21
+        enabled: false
+      simple_header:
+        weight: 22
+        enabled: false
+      svg_card_item:
+        weight: 26
+        enabled: true
+      svg_cards:
+        weight: 25
+        enabled: false
+field_type: entity_reference_revisions

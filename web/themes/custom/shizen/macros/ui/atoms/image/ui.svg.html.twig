@@ -1,0 +1,20 @@
+{% macro svg(content, opts) %}
+
+  {% set default_classes = [
+  ] %}
+
+  {# Merge class with default classes #}
+  {% set attrs = opts.attrs ?? {} %}
+  {% set attr_class = (attrs.class ?? '')|split(' ') %}
+  {% set classes = default_classes|merge(attr_class) %}
+  {% set attrs = attrs|merge({class: classes|join(' ')}) %}
+
+  <div
+    {# Display the attributes #}
+    {% for name, value in attrs %}
+      {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
+    {% endfor %}
+  >
+    {{ content|raw }}
+  </div>
+{% endmacro svg %}
