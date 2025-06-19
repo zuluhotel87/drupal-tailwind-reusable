@@ -4,7 +4,7 @@
 {% set item_content = items[0].content %}
 
 {% set btn_content %}
-  <div class="inline-flex items-center space-x-2 font-bold">
+  <div {{ attributes.addClass('inline-flex items-center space-x-2 font-bold') }}>
     {{ item_content['#title'] }}
     {{ icon('arrow-right-short') }}
   </div>

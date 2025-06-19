@@ -1,4 +1,3 @@
-{% from "@shizen/macros/ui/atoms/image/ui.image.html.twig" import responsive_image %}
 {% from "@shizen/macros/ui/molecules/container/ui.container.html.twig" import container %}
 
 {%
@@ -10,15 +9,11 @@
   ]
 %}
 
-{% set media = content.field_media[0]['#media'].field_media_image ?? null %}
-
 {% set paragraph_content %}
   {% block paragraph %}
     <div{{ attributes.addClass(classes) }}>
       {% block content %}
-          {{ include('@shizen/templates/paragraph/partials/background-cover-image-with-ctas.html.twig', {
-              content: content,
-          }) }}
+        {{ content }}
       {% endblock %}
     </div>
   {% endblock paragraph %}
@@ -27,7 +22,6 @@
 {% set layout_paragraph = paragraph.field_paragraph_layout.entity %}
 
 {{ container({
-  alignment: paragraph.field_content_alignment.value,
   background: layout_paragraph.field_layout_background.value,
   height: layout_paragraph.field_layout_height.value,
   width: 'wide',
