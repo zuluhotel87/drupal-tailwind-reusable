@@ -1,6 +1,5 @@
 {% macro icon(name, opts) %}
   {% set default_classes = [
-    'flex-shrink-0',
   ] %}
 
   {# Merge class with default classes #}
@@ -18,12 +17,12 @@
   {% set icon_set = parts[1] is defined ? parts[0] : 'bootstrap' %}
   {% set icon_name = parts[1] is defined ? parts[1] : parts[0] %}
 
-  <span
+  <div
     {# Display the attributes #}
     {% for name, value in attrs %}
       {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
     {% endfor %}
   >
     {{ icon(icon_set, icon_name, opts) }}
-  </span>
+  </div>
 {% endmacro icon %}

@@ -12,4 +12,5 @@
 - sign up form with CTA (any webforms ofc)
 
 
-- svg-cards
+
+rename paragraph icon-card-item to (add layout inline, left, top)

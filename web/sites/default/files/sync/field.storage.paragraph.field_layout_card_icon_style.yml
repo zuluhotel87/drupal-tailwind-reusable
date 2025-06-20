@@ -1,0 +1,30 @@
+uuid: 540b58df-c580-4514-969a-9cb056b58b2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_layout_card_icon_style
+field_name: field_layout_card_icon_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: Default
+    -
+      value: circle
+      label: Circle
+    -
+      value: square
+      label: Square
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

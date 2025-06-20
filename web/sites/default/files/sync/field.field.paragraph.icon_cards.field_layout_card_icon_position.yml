@@ -1,0 +1,23 @@
+uuid: caec0278-4488-4ff3-a894-e10315fb71cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout_card_icon_position
+    - paragraphs.paragraphs_type.icon_cards
+  module:
+    - options
+id: paragraph.icon_cards.field_layout_card_icon_position
+field_name: field_layout_card_icon_position
+entity_type: paragraph
+bundle: icon_cards
+label: Position
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: top
+default_value_callback: ''
+settings: {  }
+field_type: list_string

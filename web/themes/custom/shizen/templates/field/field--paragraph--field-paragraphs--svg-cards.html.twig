@@ -1,10 +1,14 @@
 {% from "@shizen/macros/ui/atoms/link/ui.link.html.twig" import link %}
 {% from "@shizen/macros/ui/atoms/image/ui.svg.html.twig" import svg %}
 
-<div{{ attributes.addClass('flex flex-wrap justify-center items-center justify-between gap-10') }}>
+<div{{ attributes.addClass('flex flex-wrap justify-center items-center justify-between gap-16') }}>
   {% for item in items %}
     {% set uri = item.content['#paragraph'].field_url.value[0].uri %}
-    {% set svg_content = svg(item.content['#paragraph'].field_custom_svg.entity.description.value) %}
+    {% set svg_content = svg(item.content['#paragraph'].field_custom_svg.entity.description.value, {
+      attrs: {
+        class: 'h-11 text-light-dark' ~ (uri ? ' hover:text-light-dark-soft transition-colors duration-200'),
+      },
+    }) %}
 
     {% if uri %}
       {{ link({

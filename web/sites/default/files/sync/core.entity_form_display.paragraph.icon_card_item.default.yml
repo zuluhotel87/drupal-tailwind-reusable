@@ -1,20 +1,20 @@
-uuid: eda47c3c-5b54-499b-899b-6a8ac039ed87
+uuid: 54888044-dad4-49eb-9c54-198330f81761
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card_item.field_description
-    - field.field.paragraph.card_item.field_icon
-    - field.field.paragraph.card_item.field_paragraph_cta
-    - field.field.paragraph.card_item.field_title
-    - paragraphs.paragraphs_type.card_item
+    - field.field.paragraph.icon_card_item.field_description
+    - field.field.paragraph.icon_card_item.field_icon
+    - field.field.paragraph.icon_card_item.field_paragraph_cta
+    - field.field.paragraph.icon_card_item.field_title
+    - paragraphs.paragraphs_type.icon_card_item
   module:
     - paragraphs
     - text
     - ui_icons_field
-id: paragraph.card_item.default
+id: paragraph.icon_card_item.default
 targetEntityType: paragraph
-bundle: card_item
+bundle: icon_card_item
 mode: default
 content:
   field_description:

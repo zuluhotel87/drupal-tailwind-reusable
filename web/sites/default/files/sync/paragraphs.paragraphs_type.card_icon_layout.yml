@@ -1,0 +1,10 @@
+uuid: d3596eec-80bb-4d80-905e-e34d8263d003
+langcode: en
+status: true
+dependencies: {  }
+id: card_icon_layout
+label: 'Card icon layout'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

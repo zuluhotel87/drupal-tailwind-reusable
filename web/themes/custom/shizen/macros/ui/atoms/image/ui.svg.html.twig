@@ -1,20 +1,15 @@
 {% macro svg(content, opts) %}
-
-  {% set default_classes = [
-  ] %}
-
-  {# Merge class with default classes #}
   {% set attrs = opts.attrs ?? {} %}
-  {% set attr_class = (attrs.class ?? '')|split(' ') %}
-  {% set classes = default_classes|merge(attr_class) %}
-  {% set attrs = attrs|merge({class: classes|join(' ')}) %}
 
-  <div
-    {# Display the attributes #}
-    {% for name, value in attrs %}
-      {{ ' ' ~ name|replace({'_': '-'}) }}="{{ value }}"
-    {% endfor %}
-  >
-    {{ content|raw }}
-  </div>
-{% endmacro svg %}
+  {% set attr_string = '' %}
+  {% for name, value in attrs %}
+    {% set attr_string = attr_string ~ ' ' ~ name|replace({'_': '-'}) ~ '="' ~ value ~ '"' %}
+  {% endfor %}
+
+  {# Replace the first <svg ...> with <svg {{ attr_string }}> #}
+  {% set modified_svg = content|replace({
+    '<svg': '<svg' ~ attr_string
+  }) %}
+
+  {{ modified_svg|raw }}
+{% endmacro %}

@@ -1,19 +1,62 @@
 {% macro card_item(opts) %}
-  {% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+  {% from _self import render_icon %}
   {% from "@shizen/macros/ui/atoms/title/ui.title.html.twig" import title %}
 
-  <div class="space-y-3">
-    <div class="block">
-      {{ icon(opts.icon) }}
+  {% set icon = opts.icon ?? null %}
+  {% set icon_position = icon.position|default('top') %}
+  {% set is_icon_left = icon and icon_position == 'left' %}
+
+  <div class="{{ is_icon_left ? 'flex items-start space-x-6' : 'space-y-3' }}">
+    {% if icon %}
+      <div class="{{ is_icon_left ? 'mt-1' : '' }}">
+        {{ render_icon(icon) }}
+      </div>
+    {% endif %}
+
+    <div class="{{ is_icon_left ? 'space-y-3' : '' }}">
+      {{ title({
+        label: opts.title,
+        heading: 'h3',
+      }) }}
+
+      {{ opts.description|raw }}
+
+      {{ opts.ctas|view }}
     </div>
+  </div>
+{% endmacro %}
 
-    {{ title({
-      label: opts.title,
-      heading: 'h3',
+{% macro render_icon(icon) %}
+  {% from "@shizen/macros/ui/atoms/icon/ui.icon.html.twig" import icon %}
+
+  {% set icon_sizes = {
+    'small': '25',
+    'medium': '50',
+    'large': '100',
+  } %}
+
+  {% set size_classes = {
+    'small': 'p-1',
+    'medium': 'p-2',
+    'large': 'p-5',
+  } %}
+
+  {% set style_classes = {
+    'default': '',
+    'circle': 'bg-primary rounded-full',
+    'square': 'bg-primary rounded',
+  } %}
+
+  {% set icon_size = icon_sizes[icon.size|default('medium')] %}
+  {% set size_class = size_classes[icon.size|default('medium')] %}
+  {% set style_class = style_classes[icon.style|default('default')] %}
+
+  <div class="{{ style_class }}">
+    {{ icon(icon.name, {
+      size: icon_size,
+      attrs: {
+        class: size_class,
+      },
     }) }}
-
-    {{ opts.description|raw }}
-
-    {{ opts.ctas|view }}
   </div>
 {% endmacro %}
