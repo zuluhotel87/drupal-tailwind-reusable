@@ -1,0 +1,21 @@
+uuid: d3e53e4e-afb6-4807-a1f1-ec01fabcacda
+langcode: en
+status: true
+dependencies: {  }
+name: content_mobile_9_16
+label: 'Content Mobile 9:16 (360x640)'
+effects:
+  725aada6-6a17-4a53-96eb-9d6162565f2a:
+    uuid: 725aada6-6a17-4a53-96eb-9d6162565f2a
+    id: image_scale
+    weight: 1
+    data:
+      width: 360
+      height: 640
+      upscale: false
+  c4658c40-a31d-45ae-9524-45101513f621:
+    uuid: c4658c40-a31d-45ae-9524-45101513f621
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

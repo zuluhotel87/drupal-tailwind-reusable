@@ -1,16 +1,16 @@
-uuid: cd864577-0d3c-4fbd-b896-3e51dde15766
+uuid: 4f70bc7f-33c4-435b-88b1-fe917a95b4e8
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_image_alignment
-    - paragraphs.paragraphs_type.cover_image_with_ctas
+    - paragraphs.paragraphs_type.media_with_feature_list_and_ctas
   module:
     - options
-id: paragraph.cover_image_with_ctas.field_image_alignment
+id: paragraph.media_with_feature_list_and_ctas.field_image_alignment
 field_name: field_image_alignment
 entity_type: paragraph
-bundle: cover_image_with_ctas
+bundle: media_with_feature_list_and_ctas
 label: Alignment
 description: ''
 required: true

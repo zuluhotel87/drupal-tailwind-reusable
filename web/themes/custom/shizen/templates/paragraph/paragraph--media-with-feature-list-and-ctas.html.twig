@@ -3,14 +3,15 @@
 
 {%
   set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
-  ]
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
 %}
 
-{% set media = content.field_media[0]['#media'].field_media_image ?? null %}
+{% set media = content.field_media[0]['#media'] %}
+{% set is_media_image = media ? content.field_media[0]['#media'].bundle.target_id == 'image' %}
 {% set media_alignment = paragraph.field_image_alignment.value %}
 
 {% set paragraph_content %}
@@ -19,7 +20,12 @@
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         {% if media %}
           <div class="hidden lg:block lg:col-span-4 {{ media_alignment == 'right' ? 'lg:order-2' }}">
-            {{ responsive_image(media, 'content_1_1') }}
+            {% if is_media_image %}
+              {% set media_image = media.field_media_image ?? null %}
+              {{ responsive_image(media, 'content_9_16') }}
+            {% else %}
+              {{ content.field_media }}
+            {% endif %}
           </div>
           <div class="lg:col-span-8 space-y-10 {{ media_alignment == 'right' ? 'lg:order-1' }}">
             {{ content|without('field_media') }}

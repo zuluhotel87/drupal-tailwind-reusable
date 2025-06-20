@@ -1,15 +1,17 @@
-uuid: db15d548-f091-4214-bae9-eead0736b80d
+uuid: 99a745aa-11f5-464e-9292-f8a3595ab6fd
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_media
     - media.type.image
-    - paragraphs.paragraphs_type.cover_image_with_ctas
-id: paragraph.cover_image_with_ctas.field_media
+    - media.type.remote_video
+    - media.type.video
+    - paragraphs.paragraphs_type.media_with_feature_list_and_ctas
+id: paragraph.media_with_feature_list_and_ctas.field_media
 field_name: field_media
 entity_type: paragraph
-bundle: cover_image_with_ctas
+bundle: media_with_feature_list_and_ctas
 label: Media
 description: ''
 required: false
@@ -21,6 +23,8 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+      remote_video: remote_video
+      video: video
     sort:
       field: _none
       direction: ASC
