@@ -8,12 +8,10 @@
 
   <div class="{{ is_icon_left ? 'flex items-start space-x-6' : 'space-y-3' }}">
     {% if icon %}
-      <div class="{{ is_icon_left ? 'mt-1' : '' }}">
-        {{ render_icon(icon) }}
-      </div>
+      {{ render_icon(icon) }}
     {% endif %}
 
-    <div class="{{ is_icon_left ? 'space-y-3' : '' }}">
+    <div class="space-y-3">
       {{ title({
         label: opts.title,
         heading: 'h3',
@@ -51,12 +49,10 @@
   {% set size_class = size_classes[icon.size|default('medium')] %}
   {% set style_class = style_classes[icon.style|default('default')] %}
 
-  <div class="{{ style_class }}">
-    {{ icon(icon.name, {
-      size: icon_size,
-      attrs: {
-        class: size_class,
-      },
-    }) }}
-  </div>
+  {{ icon(icon.name, {
+    size: icon_size,
+    attrs: {
+      class: style_class ~ size_class,
+    },
+  }) }}
 {% endmacro %}

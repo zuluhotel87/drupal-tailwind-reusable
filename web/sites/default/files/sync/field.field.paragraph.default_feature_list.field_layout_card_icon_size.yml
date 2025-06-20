@@ -1,19 +1,19 @@
-uuid: 11f5a1d7-f330-4a44-b1da-af54fa8ef197
+uuid: 09226a11-da25-4fb0-ad63-b33f3f4d38be
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_layout_card_icon_size
-    - paragraphs.paragraphs_type.icon_cards
+    - paragraphs.paragraphs_type.default_feature_list
   module:
     - options
-id: paragraph.icon_cards.field_layout_card_icon_size
+id: paragraph.default_feature_list.field_layout_card_icon_size
 field_name: field_layout_card_icon_size
 entity_type: paragraph
-bundle: icon_cards
+bundle: default_feature_list
 label: Size
 description: ''
-required: true
+required: false
 translatable: false
 default_value:
   -

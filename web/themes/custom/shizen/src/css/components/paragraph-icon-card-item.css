@@ -1,0 +1,8 @@
+.text-center .paragraph--type--icon-card-item .icon-wrapper {
+  @apply flex justify-center
+}
+
+.text-right .paragraph--type--icon-card-item .icon-wrapper {
+  @apply flex justify-end
+}
+

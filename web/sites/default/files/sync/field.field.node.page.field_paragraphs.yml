@@ -8,7 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.background_cover_image_with_ctas
     - paragraphs.paragraphs_type.background_image_cards
     - paragraphs.paragraphs_type.cover_image_with_ctas
-    - paragraphs.paragraphs_type.icon_cards
+    - paragraphs.paragraphs_type.default_feature_list
     - paragraphs.paragraphs_type.media_embed_with_cta
     - paragraphs.paragraphs_type.media_with_heading
     - paragraphs.paragraphs_type.svg_cards
@@ -33,7 +33,7 @@ settings:
       media_with_heading: media_with_heading
       background_image_cards: background_image_cards
       media_embed_with_cta: media_embed_with_cta
-      icon_cards: icon_cards
+      default_feature_list: default_feature_list
       svg_cards: svg_cards
     negate: 0
     target_bundles_drag_drop:
@@ -43,21 +43,24 @@ settings:
       background_image_cards:
         weight: 13
         enabled: true
+      card_icon_layout:
+        weight: 18
+        enabled: false
       cover_image_with_ctas:
         weight: 10
         enabled: true
       cta:
         weight: 4
         enabled: false
+      default_feature_list:
+        weight: 21
+        enabled: true
       hero_section:
         weight: 5
         enabled: false
       icon_card_item:
         weight: 21
         enabled: false
-      icon_cards:
-        weight: 20
-        enabled: true
       image_card_item:
         weight: 18
         enabled: false

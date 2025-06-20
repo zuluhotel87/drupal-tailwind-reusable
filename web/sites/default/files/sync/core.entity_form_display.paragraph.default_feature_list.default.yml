@@ -1,15 +1,16 @@
-uuid: d33e9d45-e1f4-4858-81b5-b5fbe70b2066
+uuid: 60004b5a-6e3e-45f3-bec2-6b763d0a4fcf
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.icon_cards.field_layout_card_icon_position
-    - field.field.paragraph.icon_cards.field_layout_card_icon_size
-    - field.field.paragraph.icon_cards.field_layout_card_icon_style
-    - field.field.paragraph.icon_cards.field_paragraph
-    - field.field.paragraph.icon_cards.field_paragraph_card_items
-    - field.field.paragraph.icon_cards.field_paragraph_layout
-    - paragraphs.paragraphs_type.icon_cards
+    - field.field.paragraph.default_feature_list.field_content_alignment
+    - field.field.paragraph.default_feature_list.field_layout_card_icon_position
+    - field.field.paragraph.default_feature_list.field_layout_card_icon_size
+    - field.field.paragraph.default_feature_list.field_layout_card_icon_style
+    - field.field.paragraph.default_feature_list.field_paragraph
+    - field.field.paragraph.default_feature_list.field_paragraph_card_items
+    - field.field.paragraph.default_feature_list.field_paragraph_layout
+    - paragraphs.paragraphs_type.default_feature_list
   module:
     - field_group
     - paragraphs
@@ -22,7 +23,7 @@ third_party_settings:
       label: Tabs
       region: content
       parent_name: ''
-      weight: 3
+      weight: 6
       format_type: tabs
       format_settings:
         classes: ''
@@ -38,7 +39,7 @@ third_party_settings:
       label: Content
       region: content
       parent_name: group_tabs
-      weight: 4
+      weight: 7
       format_type: tab
       format_settings:
         classes: ''
@@ -50,12 +51,13 @@ third_party_settings:
         required_fields: false
     group_layout:
       children:
+        - field_content_alignment
         - field_paragraph_layout
         - group_card_item
       label: Layout
       region: content
       parent_name: group_tabs
-      weight: 5
+      weight: 8
       format_type: tab
       format_settings:
         classes: ''
@@ -70,10 +72,10 @@ third_party_settings:
         - field_layout_card_icon_position
         - field_layout_card_icon_size
         - field_layout_card_icon_style
-      label: 'Card Item'
+      label: 'Card item'
       region: content
       parent_name: group_layout
-      weight: 1
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -81,12 +83,18 @@ third_party_settings:
         id: ''
         label_as_html: false
         description: ''
-        required_fields: true
-id: paragraph.icon_cards.default
+        required_fields: false
+id: paragraph.default_feature_list.default
 targetEntityType: paragraph
-bundle: icon_cards
+bundle: default_feature_list
 mode: default
 content:
+  field_content_alignment:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_layout_card_icon_position:
     type: options_select
     weight: 0
@@ -107,7 +115,7 @@ content:
     third_party_settings: {  }
   field_paragraph:
     type: paragraphs
-    weight: 1
+    weight: 4
     region: content
     settings:
       title: Paragraph
@@ -125,7 +133,7 @@ content:
     third_party_settings: {  }
   field_paragraph_card_items:
     type: paragraphs
-    weight: 2
+    weight: 5
     region: content
     settings:
       title: Paragraph
@@ -143,7 +151,7 @@ content:
     third_party_settings: {  }
   field_paragraph_layout:
     type: paragraphs
-    weight: 0
+    weight: 4
     region: content
     settings:
       title: Paragraph

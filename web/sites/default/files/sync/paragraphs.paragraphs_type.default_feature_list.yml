@@ -1,9 +1,9 @@
-uuid: 8c67a332-3f8b-4c1d-8c99-34ff041e7699
+uuid: 45ba6d16-09a8-48bf-b502-c97bea19d283
 langcode: en
 status: true
 dependencies: {  }
-id: icon_cards
-label: 'Icon cards'
+id: default_feature_list
+label: 'Default feature list'
 icon_uuid: null
 icon_default: null
 description: ''

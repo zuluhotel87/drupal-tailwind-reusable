@@ -24,6 +24,7 @@
 {% set layout_paragraph = paragraph.field_paragraph_layout.entity %}
 
 {{ container({
+  alignment: paragraph.field_content_alignment.value,
   background: layout_paragraph.field_layout_background.value,
   height: layout_paragraph.field_layout_height.value,
   width: 'wide',

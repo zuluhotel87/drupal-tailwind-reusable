@@ -1,16 +1,16 @@
-uuid: caec0278-4488-4ff3-a894-e10315fb71cf
+uuid: 499b0931-f232-46d4-a5d5-c488ad60ba9c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_layout_card_icon_position
-    - paragraphs.paragraphs_type.icon_cards
+    - paragraphs.paragraphs_type.default_feature_list
   module:
     - options
-id: paragraph.icon_cards.field_layout_card_icon_position
+id: paragraph.default_feature_list.field_layout_card_icon_position
 field_name: field_layout_card_icon_position
 entity_type: paragraph
-bundle: icon_cards
+bundle: default_feature_list
 label: Position
 description: ''
 required: true
