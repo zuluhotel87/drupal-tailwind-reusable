@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.default_feature_list.field_layout_card_icon_size
     - field.field.paragraph.default_feature_list.field_layout_card_icon_style
     - field.field.paragraph.default_feature_list.field_paragraph
-    - field.field.paragraph.default_feature_list.field_paragraph_card_items
+    - field.field.paragraph.default_feature_list.field_paragraph_feature_list
     - field.field.paragraph.default_feature_list.field_paragraph_layout
     - paragraphs.paragraphs_type.default_feature_list
   module:
@@ -35,7 +35,7 @@ third_party_settings:
     group_content:
       children:
         - field_paragraph
-        - field_paragraph_card_items
+        - field_paragraph_feature_list
       label: Content
       region: content
       parent_name: group_tabs
@@ -131,7 +131,7 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_paragraph_card_items:
+  field_paragraph_feature_list:
     type: paragraphs
     weight: 5
     region: content

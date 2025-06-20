@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.svg_card_item.field_custom_svg
-    - field.field.paragraph.svg_card_item.field_url
-    - paragraphs.paragraphs_type.svg_card_item
-id: paragraph.svg_card_item.default
+    - field.field.paragraph.svg_item.field_custom_svg
+    - field.field.paragraph.svg_item.field_url
+    - paragraphs.paragraphs_type.svg_item
+id: paragraph.svg_item.default
 targetEntityType: paragraph
-bundle: svg_card_item
+bundle: svg_item
 mode: default
 content:
   field_custom_svg:

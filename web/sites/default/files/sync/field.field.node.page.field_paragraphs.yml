@@ -11,7 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.default_feature_list
     - paragraphs.paragraphs_type.media_embed_with_cta
     - paragraphs.paragraphs_type.media_with_heading
-    - paragraphs.paragraphs_type.svg_cards
+    - paragraphs.paragraphs_type.svg_list
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -34,7 +34,7 @@ settings:
       background_image_cards: background_image_cards
       media_embed_with_cta: media_embed_with_cta
       default_feature_list: default_feature_list
-      svg_cards: svg_cards
+      svg_list: svg_list
     negate: 0
     target_bundles_drag_drop:
       background_cover_image_with_ctas:
@@ -76,10 +76,10 @@ settings:
       simple_header:
         weight: 18
         enabled: false
-      svg_card_item:
+      svg_item:
         weight: 26
         enabled: false
-      svg_cards:
+      svg_list:
         weight: 25
         enabled: true
 field_type: entity_reference_revisions

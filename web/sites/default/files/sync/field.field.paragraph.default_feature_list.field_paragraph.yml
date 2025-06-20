@@ -67,10 +67,10 @@ settings:
       simple_header:
         weight: 17
         enabled: true
-      svg_card_item:
+      svg_item:
         weight: 32
         enabled: false
-      svg_cards:
+      svg_list:
         weight: 31
         enabled: false
 field_type: entity_reference_revisions

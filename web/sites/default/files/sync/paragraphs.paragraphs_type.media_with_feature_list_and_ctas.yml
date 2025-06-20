@@ -1,0 +1,10 @@
+uuid: 05ee076b-1a50-4c0c-aeb2-eb95b00c52fb
+langcode: en
+status: true
+dependencies: {  }
+id: media_with_feature_list_and_ctas
+label: 'Media with feature list and CTAs'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

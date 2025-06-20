@@ -2,8 +2,8 @@ uuid: 7d6c3ce8-a474-438e-8330-c9448cb8e445
 langcode: en
 status: true
 dependencies: {  }
-id: svg_cards
-label: 'SVG cards'
+id: svg_list
+label: 'SVG list'
 icon_uuid: null
 icon_default: null
 description: ''

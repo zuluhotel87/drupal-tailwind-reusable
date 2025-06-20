@@ -3,15 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.svg_cards.field_paragraph
-    - field.field.paragraph.svg_cards.field_paragraph_layout
-    - field.field.paragraph.svg_cards.field_paragraphs
-    - paragraphs.paragraphs_type.svg_cards
+    - field.field.paragraph.svg_list.field_paragraph
+    - field.field.paragraph.svg_list.field_paragraph_layout
+    - paragraphs.paragraphs_type.svg_list
   module:
     - entity_reference_revisions
-id: paragraph.svg_cards.default
+id: paragraph.svg_list.default
 targetEntityType: paragraph
-bundle: svg_cards
+bundle: svg_list
 mode: default
 content:
   field_paragraph:

@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_url
-    - paragraphs.paragraphs_type.svg_card_item
+    - paragraphs.paragraphs_type.svg_item
   module:
     - link
-id: paragraph.svg_card_item.field_url
+id: paragraph.svg_item.field_url
 field_name: field_url
 entity_type: paragraph
-bundle: svg_card_item
+bundle: svg_item
 label: Url
 description: ''
 required: false

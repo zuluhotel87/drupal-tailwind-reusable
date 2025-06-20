@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.cover_image_with_ctas.field_image_alignment
     - field.field.paragraph.cover_image_with_ctas.field_media
     - field.field.paragraph.cover_image_with_ctas.field_paragraph
-    - field.field.paragraph.cover_image_with_ctas.field_paragraph_card_items
+    - field.field.paragraph.cover_image_with_ctas.field_paragraph_feature_list
     - field.field.paragraph.cover_image_with_ctas.field_paragraph_layout
     - paragraphs.paragraphs_type.cover_image_with_ctas
   module:
@@ -35,7 +35,7 @@ third_party_settings:
       children:
         - group_media
         - field_paragraph
-        - field_paragraph_card_items
+        - field_paragraph_feature_list
       label: Content
       region: content
       parent_name: group_tabs
@@ -117,7 +117,7 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_paragraph_card_items:
+  field_paragraph_feature_list:
     type: paragraphs
     weight: 9
     region: content

@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.default_feature_list.field_layout_card_icon_size
     - field.field.paragraph.default_feature_list.field_layout_card_icon_style
     - field.field.paragraph.default_feature_list.field_paragraph
-    - field.field.paragraph.default_feature_list.field_paragraph_card_items
+    - field.field.paragraph.default_feature_list.field_paragraph_feature_list
     - field.field.paragraph.default_feature_list.field_paragraph_layout
     - paragraphs.paragraphs_type.default_feature_list
   module:
@@ -27,7 +27,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_paragraph_card_items:
+  field_paragraph_feature_list:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:

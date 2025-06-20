@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_custom_svg
-    - paragraphs.paragraphs_type.svg_card_item
+    - paragraphs.paragraphs_type.svg_item
     - taxonomy.vocabulary.custom_svgs
-id: paragraph.svg_card_item.field_custom_svg
+id: paragraph.svg_item.field_custom_svg
 field_name: field_custom_svg
 entity_type: paragraph
-bundle: svg_card_item
+bundle: svg_item
 label: 'Custom SVG'
 description: ''
 required: false

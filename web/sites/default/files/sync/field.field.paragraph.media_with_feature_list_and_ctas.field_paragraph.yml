@@ -1,17 +1,17 @@
-uuid: cd368483-2370-43e7-b776-afe6e5ad8ff3
+uuid: e2f0e80b-ff44-440b-a9c2-159d02207402
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph
+    - paragraphs.paragraphs_type.media_with_feature_list_and_ctas
     - paragraphs.paragraphs_type.simple_header
-    - paragraphs.paragraphs_type.svg_cards
   module:
     - entity_reference_revisions
-id: paragraph.svg_cards.field_paragraph
+id: paragraph.media_with_feature_list_and_ctas.field_paragraph
 field_name: field_paragraph
 entity_type: paragraph
-bundle: svg_cards
+bundle: media_with_feature_list_and_ctas
 label: 'Simple Header'
 description: ''
 required: false
@@ -26,13 +26,13 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       background_cover_image_with_ctas:
-        weight: 14
+        weight: 17
         enabled: false
       background_image_cards:
-        weight: 15
+        weight: 18
         enabled: false
-      card_item:
-        weight: 10
+      card_icon_layout:
+        weight: 19
         enabled: false
       cover_image_with_ctas:
         weight: 11
@@ -40,14 +40,23 @@ settings:
       cta:
         weight: 12
         enabled: false
+      default_feature_list:
+        weight: 22
+        enabled: false
       hero_section:
         weight: 13
         enabled: false
+      icon_card_item:
+        weight: 24
+        enabled: false
       image_card_item:
-        weight: 20
+        weight: 25
         enabled: false
       media_embed_with_cta:
-        weight: 21
+        weight: 26
+        enabled: false
+      media_with_feature_list_and_ctas:
+        weight: 27
         enabled: false
       media_with_heading:
         weight: 15
@@ -58,10 +67,10 @@ settings:
       simple_header:
         weight: 17
         enabled: true
-      svg_card_item:
-        weight: 26
+      svg_item:
+        weight: 32
         enabled: false
-      svg_cards:
-        weight: 25
+      svg_list:
+        weight: 31
         enabled: false
 field_type: entity_reference_revisions
