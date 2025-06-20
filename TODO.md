@@ -19,6 +19,10 @@
 - sign up form with CTA (any webforms ofc)
 
 
+- separate the logic for macro card
+  - it should only render the layout of the card, not the content inside it
+
+
 next paragraphs:
   comparison cards
     revise primary, secondary, thierce colors

@@ -5,13 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.page
-    - paragraphs.paragraphs_type.background_cover_image_with_ctas
-    - paragraphs.paragraphs_type.background_image_cards
-    - paragraphs.paragraphs_type.default_feature_list
-    - paragraphs.paragraphs_type.media_embed_with_cta
-    - paragraphs.paragraphs_type.media_with_feature_list_and_ctas
-    - paragraphs.paragraphs_type.media_with_heading
-    - paragraphs.paragraphs_type.svg_list
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -27,14 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles:
-      background_cover_image_with_ctas: background_cover_image_with_ctas
-      media_with_heading: media_with_heading
-      background_image_cards: background_image_cards
-      media_embed_with_cta: media_embed_with_cta
-      default_feature_list: default_feature_list
-      svg_list: svg_list
-      media_with_feature_list_and_ctas: media_with_feature_list_and_ctas
+    target_bundles: {  }
     negate: 0
     target_bundles_drag_drop:
       background_cover_image_with_ctas:
