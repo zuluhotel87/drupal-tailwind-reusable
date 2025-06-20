@@ -20,9 +20,6 @@
 
 
 next paragraphs:
-  feature list cards
-    add option on macro card to add bg-color
-
   comparison cards
     revise primary, secondary, thierce colors
 

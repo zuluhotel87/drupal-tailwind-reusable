@@ -1,7 +1,7 @@
 {% set direction = element['#object'].field_layout_card_icon_direction.value %}
 {% set field_classes = 'space-y-10' %}
 
-{% if direction == 'horizontal' %}
+{% if direction != 'vertical' %}
 
   {% set count = items|length %}
   {% set max_cols = count >= 4 ? 4 : count %}

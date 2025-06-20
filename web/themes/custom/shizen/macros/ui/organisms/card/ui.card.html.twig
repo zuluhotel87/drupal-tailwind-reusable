@@ -2,12 +2,18 @@
   {% from _self import render_icon %}
   {% from "@shizen/macros/ui/atoms/title/ui.title.html.twig" import title %}
 
+  {% set backgrounds = {
+    default: '',
+    light: 'bg-light p-5 rounded',
+    dark: 'bg-muted p-5 rounded',
+  } %}
+
   {% set icon = opts.icon ?? null %}
   {% set icon_position = icon.position|default('top') %}
   {% set is_icon_left = icon and icon_position == 'left' %}
 
-  <div class="{{ is_icon_left ? 'flex items-start space-x-6' : 'space-y-3' }}">
-    {% if icon %}
+  <div class="{{ is_icon_left ? 'flex items-start space-x-6' : 'space-y-3' }} {{ backgrounds[opts.background|default('default')] }}">
+    {% if icon.name %}
       {{ render_icon(icon) }}
     {% endif %}
 

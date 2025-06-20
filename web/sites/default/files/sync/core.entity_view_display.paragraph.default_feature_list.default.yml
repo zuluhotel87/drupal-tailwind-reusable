@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.default_feature_list.field_content_alignment
+    - field.field.paragraph.default_feature_list.field_layout_card_bg_color
     - field.field.paragraph.default_feature_list.field_layout_card_icon_position
     - field.field.paragraph.default_feature_list.field_layout_card_icon_size
     - field.field.paragraph.default_feature_list.field_layout_card_icon_style
@@ -38,6 +39,7 @@ content:
     region: content
 hidden:
   field_content_alignment: true
+  field_layout_card_bg_color: true
   field_layout_card_icon_position: true
   field_layout_card_icon_size: true
   field_layout_card_icon_style: true

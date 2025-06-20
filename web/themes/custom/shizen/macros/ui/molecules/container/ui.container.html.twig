@@ -35,7 +35,7 @@
   {% set classes = container_classes|merge(attr_class) %}
   {% set attrs = attrs|merge({class: classes|join(' ')}) %}
 
-  <div class="w-full {{ backgrounds[opts.background] is defined ? backgrounds[opts.background] }}">
+  <div class="w-full {{ backgrounds[opts.background|default('default')] }}">
       <div
       {# Display the attributes #}
       {% for name, value in attrs %}
